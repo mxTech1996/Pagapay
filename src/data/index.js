@@ -1,4 +1,4 @@
-export const pageName = 'AKWC';
+export const pageName = 'Pagapay';
 export const primaryColor = '#000000';
 export const backgroundColor = '#FFFFFF';
 export const makeClearBackground = (color) => {
@@ -44,10 +44,9 @@ export const footerData = [
 export const dataSite = {
   name: 'Pagapay',
   url: 'https://www.azucarzaz.lat/',
-  telephone: '5523022173',
-  email: 'admin@pagapay.mx',
-  address:
-    'REAL DE MINAS MANZANA 2 LOTE 2, CASA 10, SM 45 HDA VALLARTA CANCUN, BENITO JUAREZ, CANCUN, C.P. 77506',
+  telephone: '',
+  email: 'contacto@pagapay.mx',
+  address: '',
   description:
     'Our  provides fast, secure, and seamless payment processing solutions for businesses of all sizes. From online checkouts to in-store transactions, we enable  to accept payments via credit cards, digital wallets, and bank transfers with ease.',
   subtitle:
