@@ -24,7 +24,7 @@ export default function Home() {
       <ProductsComparison />
       <TestimonialsCarousel />
       <div className='  w-full px-4 xl:px-0 bg-contact bg-cover bg-center'>
-        <div className='h-full w-full bg-[rgba(80,135,198,0.7)] py-20'>
+        <div className='h-full w-full bg-[#1A2F50] py-20'>
           <dic className='w-full h-full flex flex-col text-white items-center'>
             <Label>Our experts are here to help you.</Label>
 

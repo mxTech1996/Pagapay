@@ -26,7 +26,7 @@ export default function StickyNavbar() {
         {/* Logo */}
         <Link href='/' className='flex items-center'>
           <div className='flex items-center space-x-1'>
-            <img src={dataSite.iconImage} alt='Billpocket' className='h-16' />
+            <img src='/images/logo.png' alt='Pagapay' className='h-16' />
             {/* <span className='text-sm text-gray-500'>Pagapay</span> */}
           </div>
         </Link>
@@ -61,15 +61,9 @@ export default function StickyNavbar() {
           <button
             //open link "/more-informatio"
             onClick={() => (window.location.href = '/more-information')}
-            className='px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-50 transition'
+            className='px-4 py-2 border border-[#1A2F50] text-[#1A2F50] rounded hover:bg-blue-50 transition'
           >
             Contact Us
-          </button>
-          <button
-            onClick={() => (window.location.href = '/my-cart')}
-            className='flex items-center px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition shadow-md'
-          >
-            Go to cart <FaShoppingCart className='ml-2' />
           </button>
         </div>
       </div>

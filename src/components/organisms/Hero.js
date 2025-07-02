@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
   return (
-    <section className='bg-[#001e4d] text-white min-h-screen flex items-center justify-center px-6'>
+    <section className='bg-[#1A2F50] text-white min-h-screen flex items-center justify-center px-6'>
       <div className='max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center'>
         {/* Left Content */}
         <motion.div
@@ -15,12 +15,12 @@ export default function HeroSection() {
           className='relative'
         >
           <div className='rounded-full border border-gray-500 p-20 w-fit mx-auto relative'>
-            <p className='text-green-400 font-semibold text-lg mb-2'>We are</p>
+            <p className='text-[#F29F05] font-semibold text-lg mb-2'>We are</p>
             <h1 className='text-4xl font-bold leading-tight mb-4'>
               {dataSite.subtitle}
             </h1>
             <p className='text-lg'>
-              <span className='text-green-400 font-bold'>✔️ Pagapay</span>
+              <span className='text-[#F29F05] font-bold'>✔️ Pagapay</span>
             </p>
           </div>
         </motion.div>
@@ -40,7 +40,7 @@ export default function HeroSection() {
           />
 
           <p className='text-sm mb-4 max-w-md'>{dataSite.description}</p>
-          <button className='mt-4 border-2 border-blue-400 text-blue-400 px-4 py-2 rounded hover:bg-blue-400 hover:text-white transition'>
+          <button className='mt-4 border-2 border-white text-white px-4 py-2 rounded hover:bg-blue-400 hover:text-white transition'>
             Contactar a ventas
           </button>
         </motion.div>

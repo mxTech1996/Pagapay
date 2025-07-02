@@ -53,7 +53,7 @@ export default function BenefitsSection() {
               whileHover={{ scale: 1.05 }}
               className='flex flex-col items-center border rounded-lg p-6 shadow-sm'
             >
-              <div className='mb-4 text-blue-600'>{feature.icon}</div>
+              <div className='mb-4 text-[#1A2F50]'>{feature.icon}</div>
               <h3 className='font-semibold text-lg mb-2'>{feature.title}</h3>
               <p className='text-sm text-gray-600'>{feature.description}</p>
             </motion.div>

@@ -82,7 +82,7 @@ export default function ProductsComparison() {
                 <li>Commission: {terminal.features.Fee}</li>
               </ul>
               {terminal.features.Available ? (
-                <button className='bg-blue-600 text-white flex items-center gap-2 px-4 py-2 rounded hover:bg-blue-700'>
+                <button className='bg-[#1A2F50] text-white flex items-center gap-2 px-4 py-2 rounded hover:bg-blue-700'>
                   Buy Now <FaShoppingCart />
                 </button>
               ) : (

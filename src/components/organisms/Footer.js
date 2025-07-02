@@ -10,7 +10,6 @@ const Footer = () => {
       onRedirect={(path) => {
         window.open(path, '_blank');
       }}
-      visaImage='/images/visaMaster.png'
     />
   );
 };
