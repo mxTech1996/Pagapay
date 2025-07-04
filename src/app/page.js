@@ -45,7 +45,7 @@ export default function Home() {
                   rel='nopener noreferrer'
                   className='text-white text-lg sm:text-xl lg:text-2xl flex items-center gap-3'
                 >
-                  <span className='text-secondary text-xl sm:text-2xl lg:text-3xl'>
+                  <span className='text-[#F29F05] text-xl sm:text-2xl lg:text-3xl'>
                     {item.Icon}
                   </span>{' '}
                   {item.title}
@@ -78,6 +78,6 @@ const Label = ({ children, className, ...props }) => (
     {...props}
   >
     {children}
-    <div className='h-[3px] bg-secondary w-11/12 rounded-sm mt-2' />
+    <div className='h-[3px] bg-[#F29F05] w-11/12 rounded-sm mt-2' />
   </h4>
 );
