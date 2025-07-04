@@ -5,20 +5,22 @@ import { motion } from 'framer-motion';
 
 const services = [
   {
-    title: 'In-Store Payments',
-    description: 'Contactless payment terminals for face-to-face transactions',
-    image: dataSite.services[0].image,
-  },
-  {
-    title: 'Remote Payments',
-    description: 'Payment links and digital tools to get paid from anywhere',
-    image: dataSite.services[1].image,
-  },
-  {
-    title: 'Management & Reporting',
+    title: 'Contacless Payments',
     description:
-      'Track sales, manage transactions, and access detailed reports',
-    image: dataSite.services[2].image,
+      'Accept payments in-store with our secure contactless terminals',
+    image: '/images/contactless.png',
+  },
+  {
+    title: 'Online Payments',
+    description:
+      'Easily integrate our payment gateway into your website or app',
+    image: ' /images/online.png',
+  },
+  {
+    title: 'Ecommerce And Dashboard',
+    description:
+      'Manage your transactions, refunds, and reports with our intuitive dashboard',
+    image: '/images/dashboard.png',
   },
 ];
 

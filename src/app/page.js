@@ -8,6 +8,7 @@ import Navbar from '@/components/organisms/Navbar';
 import ProductsComparison from '@/components/organisms/Products';
 import Solutions from '@/components/organisms/Solutions';
 import TestimonialsCarousel from '@/components/organisms/Testimonials';
+import PaymentMethods from '@/components/Payments';
 import Link from 'next/link';
 import { FaSquarePhone } from 'react-icons/fa6';
 import { IoMdMail } from 'react-icons/io';
@@ -19,6 +20,7 @@ export default function Home() {
       <HeroSection />
       <Solutions />
       <BenefitsSection />
+      <PaymentMethods />
       <EnterpriseSolutionsSection />
       <FeaturesSection />
       <ProductsComparison />
