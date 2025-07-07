@@ -6,17 +6,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const testimonials = [
   {
-    name: 'Gabriela',
+    name: 'Laura Mendez, E commerce Store Owner',
     location: 'Mexico City',
     experience: 'Over 1 year with our solution',
     rating: 5,
     comment:
-      'I highly recommend them. The service is very efficient, and when an issue arises, the team is attentive and provides solutions quickly. I’ve tried other providers, but this one really stands out for me.',
+      "We've been using this payment platform for over a year, and the experience has been flawless. Transactions are fast, and the dashboard is very intuitive",
     image: '/path-to-gabriela.jpg',
   },
   {
-    name: 'Michael',
-    location: 'Austin, USA',
+    name: 'Miguel Torres, Restaurant Owner',
+    location: 'Puebla, Mexico',
     experience: '6 months using our service',
     rating: 5,
     comment:
@@ -24,8 +24,8 @@ const testimonials = [
     image: '/path-to-michael.jpg',
   },
   {
-    name: 'Sophie',
-    location: 'Toronto, Canada',
+    name: 'Jose Hernandez, Retail Business Owner',
+    location: 'Monterrey, Mexico',
     experience: '2 years of partnership',
     rating: 5,
     comment:

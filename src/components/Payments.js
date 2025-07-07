@@ -4,14 +4,14 @@ import Image from 'next/image'; // Importa el componente Image de Next.js
 
 const PaymentMethods = () => {
   const cardsTopRow = [
-    { name: 'Visa', src: '/images/visa.png' }, // Visa
-    { name: 'Mastercard', src: '/images/mastercard.png' }, // Mastercard
+    { name: 'Up Si Vale', src: '/images/sivale.png' }, // Up Si Vale
     { name: 'American Express', src: '/images/amex.png' }, // American Express
     { name: 'Carnet', src: '/images/carnet.png' }, // Carnet
+    { name: 'Visa', src: '/images/visa.png' }, // Visa
+    { name: 'Mastercard', src: '/images/mastercard.png' }, // Mastercard
     { name: 'Sodexo', src: '/images/sodexo.png' }, // Sodexo
-    { name: 'Up Si Vale', src: '/images/sivale.png' }, // Up Si Vale
-    { name: 'Edenred', src: '/images/endered.png' }, // Edenred
     { name: 'RappiPay', src: '/images/rappi.png' }, // RappiPay
+    { name: 'Edenred', src: '/images/endered.png' }, // Edenred
   ];
 
   const cardsBottomRow = [
@@ -30,12 +30,11 @@ const PaymentMethods = () => {
 
       <div className='flex flex-wrap justify-center gap-4 max-w-5xl mx-auto'>
         {cardsTopRow.map((card) => (
-          <div key={card.name} className='relative w-28 h-16'>
+          <div key={card.name} className='relative w-16 h-8'>
             {' '}
             {/* Aumentamos un poco el ancho para mejor espaciado */}
             <Image
               src={card.src}
-              className='bg-white'
               alt={card.name}
               layout='fill' // Le dice a la imagen que llene el div padre
               objectFit='contain' // Asegura que la imagen no se estire y mantenga su proporción
@@ -47,10 +46,9 @@ const PaymentMethods = () => {
 
       <div className='flex flex-wrap justify-center gap-4 mt-4 max-w-3xl mx-auto'>
         {cardsBottomRow.map((card) => (
-          <div key={card.name} className='relative w-28 h-16'>
+          <div key={card.name} className='relative w-16 h-8'>
             {/* Aumentamos un poco el ancho para mejor espaciado */}
             <Image
-              className='bg-white'
               src={card.src}
               alt={card.name}
               layout='fill' // Le dice a la imagen que llene el div padre
