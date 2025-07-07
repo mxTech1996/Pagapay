@@ -30,13 +30,15 @@ const PaymentMethods = () => {
 
       <div className='flex flex-wrap justify-center gap-4 max-w-5xl mx-auto'>
         {cardsTopRow.map((card) => (
-          <div key={card.name} className='w-24 h-16 relative'>
+          <div key={card.name} className='relative w-28 h-16'>
+            {' '}
+            {/* Aumentamos un poco el ancho para mejor espaciado */}
             <Image
               src={card.src}
               alt={card.name}
-              width={50}
-              height={50}
-              quality={80} // Mejora la calidad de la imagen
+              layout='fill' // Le dice a la imagen que llene el div padre
+              objectFit='contain' // Asegura que la imagen no se estire y mantenga su proporción
+              quality={80}
             />
           </div>
         ))}
@@ -44,12 +46,14 @@ const PaymentMethods = () => {
 
       <div className='flex flex-wrap justify-center gap-4 mt-4 max-w-3xl mx-auto'>
         {cardsBottomRow.map((card) => (
-          <div key={card.name} className='w-24 h-16 relative'>
+          <div key={card.name} className='relative w-28 h-16'>
+            {' '}
+            {/* Aumentamos un poco el ancho para mejor espaciado */}
             <Image
               src={card.src}
               alt={card.name}
-              width={50}
-              height={50}
+              layout='fill' // Le dice a la imagen que llene el div padre
+              objectFit='contain' // Asegura que la imagen no se estire y mantenga su proporción
               quality={80}
             />
           </div>

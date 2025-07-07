@@ -28,7 +28,7 @@ const features = [
   },
   {
     icon: <FaGlobe size={40} />,
-    title: 'Sell Anywhere You Are',
+    title: 'Sell Any Where You Are',
     description:
       'Use payment links to receive money remotely, from any location.',
   },

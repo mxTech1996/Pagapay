@@ -36,7 +36,7 @@ export default function HeroSection() {
           <img
             src={dataSite.image_hero}
             alt='Hero Image'
-            className=' w-[400px] h-[400px] object-cover'
+            className=' w-[400px] h-[400px] object-cover mt-20'
           />
 
           <p className='text-sm mb-4 max-w-md'>{dataSite.description}</p>
