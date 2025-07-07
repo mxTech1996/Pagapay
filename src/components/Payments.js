@@ -35,6 +35,7 @@ const PaymentMethods = () => {
             {/* Aumentamos un poco el ancho para mejor espaciado */}
             <Image
               src={card.src}
+              className='bg-white'
               alt={card.name}
               layout='fill' // Le dice a la imagen que llene el div padre
               objectFit='contain' // Asegura que la imagen no se estire y mantenga su proporción
@@ -47,9 +48,9 @@ const PaymentMethods = () => {
       <div className='flex flex-wrap justify-center gap-4 mt-4 max-w-3xl mx-auto'>
         {cardsBottomRow.map((card) => (
           <div key={card.name} className='relative w-28 h-16'>
-            {' '}
             {/* Aumentamos un poco el ancho para mejor espaciado */}
             <Image
+              className='bg-white'
               src={card.src}
               alt={card.name}
               layout='fill' // Le dice a la imagen que llene el div padre
