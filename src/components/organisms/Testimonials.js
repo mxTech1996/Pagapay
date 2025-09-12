@@ -8,7 +8,7 @@ const testimonials = [
   {
     name: 'Laura Mendez, E commerce Store Owner',
     location: 'Mexico City',
-    experience: 'Over 1 year with our solution',
+    experience: '3 months using our service',
     rating: 5,
     comment:
       "We've been using this payment platform for over a year, and the experience has been flawless. Transactions are fast, and the dashboard is very intuitive",
@@ -26,7 +26,7 @@ const testimonials = [
   {
     name: 'Jose Hernandez, Retail Business Owner',
     location: 'Monterrey, Mexico',
-    experience: '2 years of partnership',
+    experience: '4 months using our service',
     rating: 5,
     comment:
       'Their technology and support are unmatched. We’ve improved our customer payment experience significantly since switching to their platform.',
