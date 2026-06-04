@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A2242"/>
+      <stop offset="1" stop-color="#1A5A8E"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1F6D9E" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#0C1A2F" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect y="520" width="1200" height="280" fill="url(#floor)"/>
+  <rect x="100" y="180" width="1000" height="360" rx="28" fill="#102945" stroke="#4EC8FF" stroke-opacity="0.4"/>
+  <rect x="170" y="240" width="220" height="240" rx="16" fill="#1B3A5E"/>
+  <rect x="415" y="240" width="370" height="240" rx="16" fill="#0F2743"/>
+  <rect x="810" y="240" width="220" height="240" rx="16" fill="#1B3A5E"/>
+  <circle cx="280" cy="320" r="58" fill="#63D9FF" fill-opacity="0.3"/>
+  <rect x="470" y="300" width="260" height="28" rx="14" fill="#63D9FF" fill-opacity="0.5"/>
+  <rect x="470" y="350" width="210" height="20" rx="10" fill="#63D9FF" fill-opacity="0.3"/>
+  <rect x="470" y="390" width="180" height="20" rx="10" fill="#63D9FF" fill-opacity="0.3"/>
+  <rect x="860" y="290" width="120" height="130" rx="14" fill="#63D9FF" fill-opacity="0.2"/>
+  <rect x="520" y="535" width="160" height="90" rx="14" fill="#1B3A5E" stroke="#5EDBFF" stroke-opacity="0.5"/>
+  <text x="600" y="590" text-anchor="middle" font-size="26" fill="#D6F4FF" font-family="Verdana, sans-serif">LOBBY</text>
+</svg>

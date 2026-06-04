@@ -1,26 +1,30 @@
-'use client';
+"use client";
 
-import { dataSite } from '@/data';
-import { motion } from 'framer-motion';
+import { dataSite } from "@/data";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className='bg-[#1A2F50] text-white min-h-screen flex items-center justify-center px-6'>
-      <div className='max-w-7xl w-full grid md:grid-cols-2 gap-10 items-center'>
+    <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
+      <div className="grid gap-10 rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(145deg,#10294b,#0a1f38)] p-7 md:grid-cols-2 md:p-10">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className='relative'
+          className="relative"
         >
-          <div className='rounded-full border border-gray-500 p-20 w-fit mx-auto relative'>
-            <p className='text-[#F29F05] font-semibold text-lg mb-2'>We are</p>
-            <h1 className='text-4xl font-bold leading-tight mb-4'>
+          <div className="rounded-3xl border border-white/10 bg-black/20 p-8 md:p-10">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--fin-accent)]">
+              We are
+            </p>
+            <h1 className="mb-4 text-3xl font-black leading-tight text-white md:text-5xl">
               {dataSite.subtitle}
             </h1>
-            <p className='text-lg'>
-              <span className='text-[#F29F05] font-bold'>✔️ Pagapay</span>
+            <p className="text-lg text-[var(--fin-muted)]">
+              <span className="font-bold text-[var(--fin-accent)]">
+                Pagapay
+              </span>
             </p>
           </div>
         </motion.div>
@@ -30,18 +34,20 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className='flex flex-col items-start'
+          className="flex flex-col items-start"
         >
           {/* image hero */}
           <img
             src={dataSite.image_hero}
-            alt='Hero Image'
-            className=' w-[400px] h-[400px] object-cover mt-20'
+            alt="Hero Image"
+            className="mt-4 h-[300px] w-full max-w-[420px] rounded-2xl border border-white/10 object-cover"
           />
 
-          <p className='text-sm mb-4 max-w-md'>{dataSite.description}</p>
-          <button className='mt-4 border-2 border-white text-white px-4 py-2 rounded hover:bg-blue-400 hover:text-white transition'>
-            Contactar a ventas
+          <p className="mb-4 mt-6 max-w-md text-sm text-[var(--fin-muted)]">
+            {dataSite.description}
+          </p>
+          <button className="mt-2 rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+            Contact Sales
           </button>
         </motion.div>
       </div>
