@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import HeroSection from "@/components/organisms/Hero";
@@ -23,7 +22,7 @@ export default function Home() {
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <Link href="/" className="group flex items-center gap-3">
             <div className="relative h-11 w-11 ring-white/20">
-              <Image
+              <img
                 src="/images/logo.png"
                 alt="Pagapay"
                 width={56}
@@ -219,11 +218,10 @@ export default function Home() {
                 className="overflow-hidden rounded-2xl border border-white/10 bg-black/20"
               >
                 <div className="relative h-52 w-full">
-                  <Image
+                  <img
                     src={item.src}
                     alt={item.title}
-                    fill
-                    className="object-cover"
+                    className="h-full w-full object-cover"
                   />
                 </div>
                 <div className="p-5">

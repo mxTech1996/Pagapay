@@ -1,6 +1,5 @@
 // components/PaymentMethods.tsx o dentro de tu page.tsx
 "use client";
-import Image from "next/image"; // Importa el componente Image de Next.js
 
 const PaymentMethods = () => {
   const cardsTopRow = [
@@ -32,12 +31,10 @@ const PaymentMethods = () => {
         <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
           {cardsTopRow.map((card) => (
             <div key={card.name} className="relative h-8 w-16">
-              <Image
+              <img
                 src={card.src}
                 alt={card.name}
-                fill
-                className="object-contain"
-                quality={80}
+                className="h-full w-full object-contain"
               />
             </div>
           ))}
@@ -46,12 +43,10 @@ const PaymentMethods = () => {
         <div className="flex flex-wrap justify-center gap-4 mt-4 max-w-3xl mx-auto">
           {cardsBottomRow.map((card) => (
             <div key={card.name} className="relative h-8 w-16">
-              <Image
+              <img
                 src={card.src}
                 alt={card.name}
-                fill
-                className="object-contain"
-                quality={80}
+                className="h-full w-full object-contain"
               />
             </div>
           ))}
