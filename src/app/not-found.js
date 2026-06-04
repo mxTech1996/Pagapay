@@ -9,7 +9,7 @@ const PageNotFound = () => {
 
   useEffect(() => {
     navigation.push('/');
-  }, []);
+  }, [navigation]);
 
   return null;
 };

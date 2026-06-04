@@ -112,7 +112,7 @@ export default function Home() {
               Real-Time Dashboard
             </p>
             <h2 className="mt-2 text-2xl font-black text-white">
-              Today's Processed Volume
+              Today&apos;s Processed Volume
             </h2>
             <p className="mt-1 text-4xl font-black text-[var(--fin-accent)]">
               $148,320
