@@ -9,6 +9,7 @@ import EnterpriseSolutionsSection from "@/components/organisms/Enterprise";
 import FeaturesSection from "@/components/organisms/Features";
 import ProductsComparison from "@/components/organisms/Products";
 import TestimonialsCarousel from "@/components/organisms/Testimonials";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -301,13 +302,12 @@ export default function Home() {
               Talk to a Specialist
               <FaArrowRight />
             </Link>
-            <Link
-              href="mailto:contacto@pagapay.mx"
-              className="inline-flex rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:border-white"
-            >
-              contacto@pagapay.mx
-            </Link>
+            <p className="inline-flex items-center rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white">
+              customer@pagapay.mx
+            </p>
           </div>
+
+          <ContactForm />
         </div>
       </section>
 
