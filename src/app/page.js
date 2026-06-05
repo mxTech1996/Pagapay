@@ -145,45 +145,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#071327,#0b2344)] p-7 md:p-10">
-          <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
-            Implementation
-          </p>
-          <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
-            Launch Your Operation in 3 Steps
-          </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {steps.map((step, index) => (
-              <article
-                key={step.title}
-                className="rounded-2xl border border-white/10 bg-black/20 p-5"
-              >
-                <p className="text-sm font-black text-[var(--fin-accent)]">
-                  0{index + 1}
-                </p>
-                <h3 className="mt-1 text-xl font-bold text-white">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm text-[var(--fin-muted)]">
-                  {step.text}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <HeroSection />
-      <Solutions />
-      <BenefitsSection />
-      <PaymentMethods />
-      <EnterpriseSolutionsSection />
-      <FeaturesSection />
-      <ProductsComparison />
-      <TestimonialsCarousel />
-
       <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
         <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#061833,#0f3650)] p-7 md:p-10">
           <div className="flex flex-wrap items-end justify-between gap-5">
@@ -282,6 +243,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
+        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#071327,#0b2344)] p-7 md:p-10">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+            Implementation
+          </p>
+          <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
+            Launch Your Operation in 3 Steps
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {steps.map((step, index) => (
+              <article
+                key={step.title}
+                className="rounded-2xl border border-white/10 bg-black/20 p-5"
+              >
+                <p className="text-sm font-black text-[var(--fin-accent)]">
+                  0{index + 1}
+                </p>
+                <h3 className="mt-1 text-xl font-bold text-white">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm text-[var(--fin-muted)]">
+                  {step.text}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <HeroSection />
+      <Solutions />
+      <BenefitsSection />
+      <PaymentMethods />
+      <EnterpriseSolutionsSection />
+      <FeaturesSection />
+      <ProductsComparison />
+      <TestimonialsCarousel />
 
       <section className="mx-auto w-full max-w-7xl px-5 pb-24 md:px-8">
         <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(140deg,#132f57,#0f5d61)] p-8 md:p-12">

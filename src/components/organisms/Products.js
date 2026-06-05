@@ -6,7 +6,7 @@ const terminalOptions = [
   {
     id: 2000,
     name: "Mom V240",
-    image: "/images/product1.jpeg",
+    image: "/images/product1_1.png",
     features: {
       MagneticStripe: true,
       ChipCard: true,
@@ -26,7 +26,7 @@ const terminalOptions = [
   {
     id: 2001,
     name: "QPOS Mini",
-    image: "/images/product2.jpeg",
+    image: "/images/product2_2.png",
     features: {
       MagneticStripe: true,
       ChipCard: true,
@@ -47,7 +47,7 @@ const terminalOptions = [
   {
     id: 2002,
     name: "Android Terminal",
-    image: "/images/product3.jpeg",
+    image: "/images/product3_3.png",
     features: {
       MagneticStripe: true,
       ChipCard: true,
