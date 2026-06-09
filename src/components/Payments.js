@@ -27,8 +27,8 @@ const PaymentMethods = () => {
   const t =
     language === "es"
       ? {
-          title: "Di si a cada tarjeta",
-          description: "Credito, debito, vales, contactless y mas",
+          title: "Di sí a cada tarjeta",
+          description: "Crédito, débito, vales, contactless y más",
         }
       : {
           title: "Say Yes to Every Card",

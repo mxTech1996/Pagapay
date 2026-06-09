@@ -82,7 +82,7 @@ const testimonialsContent = {
     title: "Success Stories",
     testimonials: [
       {
-        name: "Laura Mendez, E commerce Store Owner",
+        name: "Laura Mendez, E-commerce Store Owner",
         location: "Mexico City",
         experience: "3 months using our service",
         rating: 5,
@@ -108,31 +108,31 @@ const testimonialsContent = {
     ],
   },
   es: {
-    title: "Historias de exito",
+    title: "Historias de éxito",
     testimonials: [
       {
-        name: "Laura Mendez, Duena de tienda eCommerce",
-        location: "Ciudad de Mexico",
+        name: "Laura Mendez, Dueña de tienda e-commerce",
+        location: "Ciudad de México",
         experience: "3 meses usando nuestro servicio",
         rating: 5,
         comment:
-          "Llevamos mas de un ano usando esta plataforma de pagos y la experiencia ha sido excelente. Las transacciones son rapidas y el dashboard es muy intuitivo.",
+          "Llevamos más de un año usando esta plataforma de pagos y la experiencia ha sido excelente. Las transacciones son rápidas y el dashboard es muy intuitivo.",
       },
       {
-        name: "Miguel Torres, Dueno de restaurante",
-        location: "Puebla, Mexico",
+        name: "Miguel Torres, Dueño de restaurante",
+        location: "Puebla, México",
         experience: "6 meses usando nuestro servicio",
         rating: 5,
         comment:
-          "Excelente servicio al cliente y terminales faciles de usar. Nos ayudaron a escalar la operacion de forma rapida y segura.",
+          "Excelente servicio al cliente y terminales fáciles de usar. Nos ayudaron a escalar la operación de forma rápida y segura.",
       },
       {
-        name: "Jose Hernandez, Dueno de negocio retail",
-        location: "Monterrey, Mexico",
+        name: "Jose Hernandez, Dueño de negocio retail",
+        location: "Monterrey, México",
         experience: "4 meses usando nuestro servicio",
         rating: 5,
         comment:
-          "Su tecnologia y soporte no tienen comparacion. Mejoramos significativamente la experiencia de pago de nuestros clientes desde que cambiamos de plataforma.",
+          "Su tecnología y soporte no tienen comparación. Mejoramos significativamente la experiencia de pago de nuestros clientes desde que cambiamos de plataforma.",
       },
     ],
   },

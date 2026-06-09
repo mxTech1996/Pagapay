@@ -15,13 +15,13 @@ const pillars = [
   {
     id: "checkout",
     icon: FaStore,
-    badge: "Omnichannel checkout",
+    badge: "Checkout",
     title: "Collect payments wherever your business sells",
     description:
       "Activate payment links, QR collections, and in-person terminals from one control panel. Keep the same brand experience across web, stores, and chat sales.",
     highlights: [
       "Customizable payment links",
-      "Dynamic QR for physical stores",
+      "Unified web, QR, and in-store checkout",
       "Terminals connected to real-time reports",
     ],
   },
@@ -34,20 +34,20 @@ const pillars = [
       "Fraud engine with rules by ticket size, channel, and historical behavior. Detect suspicious patterns and reduce chargebacks while keeping approvals high.",
     highlights: [
       "Rules by amount, BIN, and origin",
-      "Alerts for out-of-pattern transactions",
+      "Adaptive authentication flows",
       "Risk optimization recommendations",
     ],
   },
   {
     id: "operations",
     icon: FaChartLine,
-    badge: "Centralized operations",
+    badge: "Operations",
     title: "Make decisions with clear daily data",
     description:
       "Reconcile automatically, export daily closeouts, and monitor revenue by payment method. Finance and operations teams work from one source of truth.",
     highlights: [
       "Dashboard by branch and channel",
-      "Automated closeouts and reconciliation",
+      "Automated settlement reports",
       "Accounting-ready reports",
     ],
   },
@@ -71,8 +71,8 @@ const journey = [
 export default function SolutionsPage() {
   const { language } = useLanguage();
   const t = solutionsPageContent[language];
-  const pillars = pillarsByLanguage[language];
-  const journey = journeyByLanguage[language];
+  const localizedPillars = pillarsByLanguage[language];
+  const localizedJourney = journeyByLanguage[language];
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[var(--fin-bg)] text-[var(--fin-ink)]">
@@ -120,7 +120,7 @@ export default function SolutionsPage() {
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {pillars.map((pillar) => {
+            {localizedPillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
                 <article
@@ -142,7 +142,7 @@ export default function SolutionsPage() {
                   </p>
                   <ul className="mt-4 space-y-2 text-sm text-[var(--fin-muted-strong)]">
                     {pillar.highlights.map((item) => (
-                      <li key={item}>• {item}</li>
+                      <li key={item}>- {item}</li>
                     ))}
                   </ul>
                 </article>
@@ -161,7 +161,7 @@ export default function SolutionsPage() {
             {t.implementationTitle}
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {journey.map((step, index) => (
+            {localizedJourney.map((step, index) => (
               <article
                 key={step.title}
                 className="rounded-2xl border border-white/10 bg-black/20 p-5"
@@ -230,18 +230,18 @@ const solutionsPageContent = {
   es: {
     backHome: "Volver al inicio",
     viewPricing: "Ver comisiones",
-    scheduleConsultation: "Agendar asesoria",
+    scheduleConsultation: "Agendar asesoría",
     sectionLabel: "Soluciones Pagapay",
     title:
       "Un ecosistema de pagos completo para acelerar ventas y ordenar operaciones",
     description:
-      "No se trata solo de cobrar. Se trata de cobrar mejor: con menos friccion, menor riesgo y mayor visibilidad para tomar decisiones de negocio.",
-    howWeWork: "Como trabajamos",
+      "No se trata solo de cobrar. Se trata de cobrar mejor: con menos fricción, menor riesgo y mayor visibilidad para tomar decisiones de negocio.",
+    howWeWork: "Cómo trabajamos",
     implementationTitle:
-      "Implementacion enfocada en resultados desde la primera semana",
-    finalTitle: "Listo para activar la solucion correcta para tu negocio?",
+      "Implementación enfocada en resultados desde la primera semana",
+    finalTitle: "¿Listo para activar la solución correcta para tu negocio?",
     finalDescription:
-      "Te ayudamos a definir el plan correcto por industria, volumen y canales. Recibe una propuesta con tiempos de implementacion y estructura de comisiones.",
+      "Te ayudamos a definir el plan correcto por industria, volumen y canales. Recibe una propuesta con tiempos de implementación y estructura de comisiones.",
     finalButton: "Quiero una propuesta",
   },
 };
@@ -255,10 +255,10 @@ const pillarsByLanguage = {
       badge: "Checkout omnicanal",
       title: "Cobra donde vende tu negocio",
       description:
-        "Activa links de pago, cobro con QR y terminal fisica desde un solo panel. Mantienes la misma experiencia de marca en web, tienda y ventas por chat.",
+        "Activa links de pago, cobro con QR y terminal física desde un solo panel. Mantienes la misma experiencia de marca en web, tienda y ventas por chat.",
       highlights: [
         "Links de pago personalizables",
-        "QR dinamico para tiendas fisicas",
+        "Checkout unificado para web, QR y tienda",
         "Terminales conectadas a reportes en tiempo real",
       ],
     },
@@ -266,26 +266,26 @@ const pillarsByLanguage = {
       id: "risk",
       icon: FaShieldHalved,
       badge: "Inteligencia de riesgo",
-      title: "Protege conversion sin bloquear buenas ventas",
+      title: "Protege conversión sin bloquear buenas ventas",
       description:
-        "Motor antifraude con reglas por monto, canal y comportamiento historico. Detecta patrones sospechosos y reduce contracargos.",
+        "Motor antifraude con reglas por monto, canal y comportamiento histórico. Detecta patrones sospechosos y reduce contracargos sin perder aprobación.",
       highlights: [
         "Reglas por monto, BIN y origen",
-        "Alertas para operaciones fuera de patron",
-        "Recomendaciones de optimizacion por riesgo",
+        "Flujos de autenticación adaptativa",
+        "Recomendaciones para optimización de riesgo",
       ],
     },
     {
       id: "operations",
       icon: FaChartLine,
-      badge: "Operacion centralizada",
-      title: "Toma decisiones con datos claros cada dia",
+      badge: "Operaciones",
+      title: "Toma decisiones con datos claros cada día",
       description:
-        "Concilia automaticamente, exporta cortes diarios y monitorea ingresos por metodo de pago.",
+        "Conciliación automática, exportaciones de cierres diarios y monitoreo de ingresos por método de pago. Finanzas y operaciones trabajan con una sola fuente de verdad.",
       highlights: [
         "Dashboard por sucursal y canal",
-        "Cierres y conciliacion automatica",
-        "Reportes listos para contabilidad",
+        "Reportes automáticos de dispersión y liquidación",
+        "Informes listos para contabilidad",
       ],
     },
   ],
@@ -295,16 +295,16 @@ const journeyByLanguage = {
   en: journey,
   es: [
     {
-      title: "Diagnostico inicial",
-      text: "Mapeamos tu flujo actual de cobro y detectamos fricciones en aprobacion, abandono y conciliacion.",
+      title: "Diagnóstico inicial",
+      text: "Mapeamos tu flujo actual de cobro y detectamos fricciones en aprobaciones, abandono y conciliación.",
     },
     {
-      title: "Implementacion guiada",
-      text: "Configuramos checkout, reglas de riesgo e integraciones para que empieces a cobrar rapido y seguro.",
+      title: "Implementación guiada",
+      text: "Configuramos checkout, reglas de riesgo e integraciones para que empieces a cobrar rápido y seguro.",
     },
     {
-      title: "Optimizacion continua",
-      text: "Analizamos performance y proponemos mejoras semanales para aumentar conversion y rentabilidad.",
+      title: "Optimización continua",
+      text: "Analizamos desempeño y proponemos mejoras semanales para elevar conversión y rentabilidad.",
     },
   ],
 };

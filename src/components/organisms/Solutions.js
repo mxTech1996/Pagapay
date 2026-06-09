@@ -93,15 +93,15 @@ const solutionsContent = {
       },
       {
         ...baseServices[1],
-        title: "Pagos en linea",
+        title: "Pagos en línea",
         description:
-          "Integra facilmente nuestra pasarela de pagos en tu sitio web o app",
+          "Integra fácilmente nuestra pasarela de pagos en tu sitio web o app.",
       },
       {
         ...baseServices[2],
         title: "eCommerce y dashboard",
         description:
-          "Gestiona transacciones, reembolsos y reportes con un panel intuitivo",
+          "Gestiona transacciones, reembolsos y reportes con un panel intuitivo.",
       },
     ],
   },

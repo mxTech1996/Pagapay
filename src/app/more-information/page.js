@@ -13,11 +13,11 @@ export default function MoreInformation() {
       ? {
           backHome: "Volver al inicio",
           label: "Contacto comercial",
-          title: "Disenemos tu operacion de pagos",
+          title: "Diseñemos tu operación de pagos",
           description:
-            "Comparte tu modelo de negocio, volumen transaccional y canales. Nuestro equipo te enviara una propuesta personalizada y hoja de ruta de implementacion.",
+            "Comparte tu modelo de negocio, volumen transaccional y canales. Nuestro equipo te enviará una propuesta personalizada y hoja de ruta de implementación.",
           contactEmail: "Correo de contacto",
-          responseTime: "Tiempo de respuesta: menos de 24 horas habiles",
+          responseTime: "Tiempo de respuesta: menos de 24 horas hábiles",
         }
       : {
           backHome: "Back to Home",

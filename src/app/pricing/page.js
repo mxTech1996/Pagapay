@@ -146,24 +146,24 @@ const plansByLanguage = {
       title: "Starter",
       fee: "3.4% + IVA",
       description: "Ideal para comercios en crecimiento con volumen inicial.",
-      features: ["Cobros por link", "Dashboard basico", "Soporte por correo"],
+      features: ["Cobros por link", "Dashboard básico", "Soporte por correo"],
     },
     {
       title: "Growth",
       fee: "2.9% + IVA",
       description:
-        "Para equipos con operacion omnicanal y necesidad de escalar.",
+        "Para equipos con operación omnicanal y necesidad de escalar.",
       features: [
         "Link + QR + terminal",
         "Reglas antifraude",
-        "Conciliacion avanzada",
+        "Conciliación avanzada",
       ],
     },
     {
       title: "Enterprise",
       fee: "Tarifa personalizada",
-      description: "Para alto volumen, multiples sucursales y SLA dedicado.",
-      features: ["Integracion a medida", "Manager dedicado", "SLA prioritario"],
+      description: "Para alto volumen, múltiples sucursales y SLA dedicado.",
+      features: ["Integración a medida", "Manager dedicado", "SLA prioritario"],
     },
   ],
 };

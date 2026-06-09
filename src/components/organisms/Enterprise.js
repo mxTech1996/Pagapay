@@ -79,19 +79,19 @@ const enterpriseContent = {
         icon: featureIcons[0],
         title: "Reportes y dashboards avanzados",
         description:
-          "Monitorea el rendimiento de tu negocio y toma mejores decisiones con informacion en tiempo real.",
+          "Monitorea el rendimiento de tu negocio y toma mejores decisiones con información en tiempo real.",
       },
       {
         icon: featureIcons[1],
         title: "Liquidaciones multi-cuenta",
         description:
-          "Liquidaciones al siguiente dia habil a una o multiples cuentas bancarias.",
+          "Liquidaciones al siguiente día hábil a una o múltiples cuentas bancarias.",
       },
       {
         icon: featureIcons[2],
-        title: "Estructuras de comision a la medida",
+        title: "Estructuras de comisión a la medida",
         description:
-          "Precios personalizados segun tu modelo de negocio, volumen y ciclo de facturacion.",
+          "Precios personalizados según tu modelo de negocio, volumen y ciclo de facturación.",
       },
     ],
   },

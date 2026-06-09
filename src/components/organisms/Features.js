@@ -91,25 +91,25 @@ const featuresContent = {
         icon: featureIcons[0],
         title: "Soporte dedicado 24/7",
         description:
-          "Recibe asistencia experta en cada etapa para aprovechar al maximo nuestras soluciones.",
+          "Recibe asistencia experta en cada etapa para aprovechar al máximo nuestras soluciones.",
       },
       {
         icon: featureIcons[1],
         title: "Terminales para cualquier negocio",
         description:
-          "Elige entre multiples modelos de terminal para empresas de todos los tamanos e industrias.",
+          "Elige entre múltiples modelos de terminal para empresas de todos los tamaños e industrias.",
       },
       {
         icon: featureIcons[2],
         title: "Cobertura nacional",
         description:
-          "Mas de una decada apoyando empresas en Mexico, incluyendo hoteles, agencias y mas.",
+          "Más de una década apoyando empresas en México, incluyendo hoteles, agencias y más.",
       },
       {
         icon: featureIcons[3],
-        title: "Conectividad WiFi y datos moviles",
+        title: "Conectividad Wi-Fi y datos móviles",
         description:
-          "Manten conexion en cualquier lugar con terminales que incluyen SIM para transacciones continuas.",
+          "Mantén conexión en cualquier lugar con terminales que incluyen SIM para transacciones continuas.",
       },
     ],
   },

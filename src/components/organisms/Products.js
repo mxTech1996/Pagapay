@@ -142,14 +142,14 @@ const productsContent = {
   },
   es: {
     title: "Elige la mejor terminal para tu negocio",
-    magneticStripe: "Banda magnetica",
+    magneticStripe: "Banda magnética",
     chipCard: "Tarjeta con chip",
     contactlessNfc: "Contactless / NFC",
     networks: "Redes",
-    commission: "Comision",
+    commission: "Comisión",
     custom: "Personalizada",
-    moreInfo: "Mas informacion",
-    yes: "Si",
+    moreInfo: "Más información",
+    yes: "Sí",
     no: "No",
   },
 };

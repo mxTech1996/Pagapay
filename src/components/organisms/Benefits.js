@@ -91,14 +91,14 @@ const benefitsContent = {
     features: [
       {
         icon: featureIcons[0],
-        title: "Acepta todos los metodos de pago",
-        description: "Credito, debito, vales, contactless y mas.",
+        title: "Acepta todos los métodos de pago",
+        description: "Crédito, débito, vales, contactless y más.",
       },
       {
         icon: featureIcons[1],
         title: "Transacciones seguras",
         description:
-          "Seguimos estandares de seguridad lideres en la industria para proteger tus pagos.",
+          "Seguimos estándares de seguridad líderes en la industria para proteger tus pagos.",
       },
       {
         icon: featureIcons[2],
@@ -110,7 +110,7 @@ const benefitsContent = {
         icon: featureIcons[3],
         title: "Vende desde cualquier lugar",
         description:
-          "Usa links de pago para recibir dinero de forma remota desde cualquier ubicacion.",
+          "Usa links de pago para recibir dinero de forma remota desde cualquier ubicación.",
       },
     ],
   },
