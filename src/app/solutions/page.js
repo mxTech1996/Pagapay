@@ -198,10 +198,10 @@ export default function SolutionsPage() {
               <FaArrowRight />
             </Link>
             <Link
-              href="mailto:contacto@pagapay.mx"
+              href="mailto:customer@pagapay.mx"
               className="inline-flex rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:border-white"
             >
-              contacto@pagapay.mx
+              customer@pagapay.mx
             </Link>
           </div>
         </div>
