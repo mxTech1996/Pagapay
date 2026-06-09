@@ -102,21 +102,13 @@ export default function ProductsComparison() {
 
                 <li>Commission: {terminal.features.Fee}</li>
               </ul>
-              {terminal.features.Available ? (
-                <button
-                  onClick={() => (window.location.href = "/more-information")}
-                  className="flex items-center gap-2 rounded-full bg-[var(--fin-primary)] px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
-                >
-                  Buy Now <FaShoppingCart />
-                </button>
-              ) : (
-                <button
-                  disabled
-                  className="cursor-not-allowed rounded-full bg-gray-400 px-4 py-2 text-gray-700"
-                >
-                  Not Available
-                </button>
-              )}
+              <button
+                onClick={() => (window.location.href = "/more-information")}
+                className="flex items-center gap-2 rounded-full bg-[var(--fin-primary)] px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
+              >
+                More Info
+                <FaShoppingCart />
+              </button>
             </div>
           ))}
         </div>

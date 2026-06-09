@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 import HeroSection from "@/components/organisms/Hero";
@@ -18,20 +19,19 @@ export default function Home() {
         <div className="hero-orb hero-orb--two" />
       </div>
 
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#fff]/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#041126]/80 backdrop-blur-xl">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 md:px-8">
           <Link href="/" className="group flex items-center gap-3">
-            <div className="relative h-11 w-11 ring-white/20">
-              <img
+            <div className="relative h-11 w-11 overflow-hidden rounded-xl ring-1 ring-white/20">
+              <Image
                 src="/images/logo.png"
                 alt="Pagapay"
-                width={56}
-                height={56}
+                fill
                 className="object-cover transition duration-500 group-hover:scale-110"
               />
             </div>
             <div>
-              <p className="text-sm text-black/70">Payments Ecosystem</p>
+              <p className="text-sm text-white/70">Payment ecosystem</p>
               <p className="text-xl font-black tracking-wide text-white">
                 PAGAPAY
               </p>
@@ -39,12 +39,6 @@ export default function Home() {
           </Link>
 
           <div className="flex items-center gap-3">
-            <Link
-              href="/my-cart"
-              className="hidden rounded-full border border-white/25 px-4 py-2 text-sm font-semibold text-black/90 transition hover:border-white hover:text-white md:inline-flex"
-            >
-              My Cart
-            </Link>
             <Link
               href="/more-information"
               className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-accent)] px-5 py-2.5 text-sm font-bold text-[#02222a] transition hover:brightness-110"
@@ -56,7 +50,10 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 pt-14 md:grid-cols-2 md:px-8 md:pt-20">
+      <section
+        id="inicio"
+        className="relative mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 pt-14 md:grid-cols-2 md:px-8 md:pt-20"
+      >
         <div className="reveal-up flex flex-col justify-center">
           <p className="mb-4 w-max rounded-full border border-[var(--fin-line)] bg-white/5 px-4 py-1.5 text-sm text-[var(--fin-muted)]">
             Payment infrastructure built for speed
@@ -64,7 +61,7 @@ export default function Home() {
           <h1 className="text-4xl font-black leading-tight text-white md:text-6xl">
             The new rhythm
             <span className="block text-[var(--fin-accent)]">
-              for digital payments
+              for your digital payments
             </span>
           </h1>
           <p className="mt-5 max-w-xl text-base text-[var(--fin-muted)] md:text-lg">
@@ -78,14 +75,14 @@ export default function Home() {
               href="/more-information"
               className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-primary)] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110"
             >
-              Request a Demo
+              Request a demo
               <FaArrowRight />
             </Link>
             <Link
-              href="/product/1"
+              href="/solutions"
               className="inline-flex items-center rounded-full border border-[var(--fin-line)] px-6 py-3 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:text-white"
             >
-              View Solutions
+              View solutions
             </Link>
           </div>
 
@@ -109,10 +106,10 @@ export default function Home() {
         <div className="reveal-up reveal-up-delay">
           <div className="relative mx-auto w-full max-w-xl rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(165deg,rgba(26,58,104,0.75),rgba(9,23,44,0.95))] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
             <p className="text-sm text-[var(--fin-muted)]">
-              Real-Time Dashboard
+              Real-time dashboard
             </p>
             <h2 className="mt-2 text-2xl font-black text-white">
-              Today&apos;s Processed Volume
+              Today&apos;s processed volume
             </h2>
             <p className="mt-1 text-4xl font-black text-[var(--fin-accent)]">
               $148,320
@@ -136,121 +133,102 @@ export default function Home() {
 
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
               <p className="text-sm text-[var(--fin-muted)]">
-                Transparent Fees
+                Transparent fees
               </p>
               <p className="mt-1 text-2xl font-black text-white">
                 From 2.9% + VAT
               </p>
+              <Link
+                href="/pricing"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--fin-accent)] transition hover:text-white"
+              >
+                View plans and pricing
+                <FaArrowRight />
+              </Link>
             </div>
           </div>
         </div>
       </section>
-      <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#061833,#0f3650)] p-7 md:p-10">
-          <div className="flex flex-wrap items-end justify-between gap-5">
-            <div className="max-w-3xl">
-              <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
-                Hospitality Section
-              </p>
-              <h2 className="mt-2 text-3xl font-black text-white md:text-5xl">
-                Specialists in Hotel Operations and Management
-              </h2>
-              <p className="mt-4 text-[var(--fin-muted)] md:text-lg">
-                From reservation to checkout, we centralize payments,
-                reconciliation, and operational control for city hotels,
-                resorts, and multi-property chains. Your front desk, finance,
-                and leadership teams work from one platform with real-time
-                visibility.
-              </p>
-            </div>
-            <Link
-              href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
+
+      <section
+        id="aceptamos"
+        className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
+      >
+        <div className="rounded-3xl border border-[var(--fin-line)] bg-white/[0.03] p-6 md:p-10">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+            We accept
+          </p>
+          <div className="mt-5 grid grid-cols-3 gap-4 sm:grid-cols-6">
+            {brands.map((brand) => (
+              <div
+                key={brand.alt}
+                className="flex h-20 items-center justify-center rounded-2xl border border-white/10 bg-[#0e2444] p-4"
+              >
+                <Image
+                  src={brand.src}
+                  alt={brand.alt}
+                  width={84}
+                  height={34}
+                  className="h-auto w-auto opacity-90"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="products"
+        className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
+      >
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+              Solutions
+            </p>
+            <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
+              A payment stack designed to scale
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {solutions.map((solution) => (
+            <article
+              key={solution.title}
+              className="group rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#0b1e3b,#08162d)] p-6 transition duration-300 hover:-translate-y-1 hover:border-white/30"
             >
-              Request a Hospitality Strategy
-              <FaArrowRight />
-            </Link>
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {hotelGallery.map((item) => (
-              <article
-                key={item.title}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-black/20"
+              <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+                {solution.tag}
+              </p>
+              <h3 className="mt-3 text-2xl font-black text-white">
+                {solution.title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--fin-muted)]">
+                {solution.description}
+              </p>
+              <Link
+                href={solution.href}
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--fin-accent)] transition hover:text-white"
               >
-                <div className="relative h-52 w-full">
-                  <img
-                    src={item.src}
-                    alt={item.title}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-black text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-[var(--fin-muted)]">
-                    {item.text}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
-            {hotelMetrics.map((metric) => (
-              <article
-                key={metric.label}
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center"
-              >
-                <p className="text-3xl font-black text-[var(--fin-accent)]">
-                  {metric.value}
-                </p>
-                <p className="mt-1 text-sm text-[var(--fin-muted)]">
-                  {metric.label}
-                </p>
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {hotelOperations.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-2xl border border-white/10 bg-black/20 p-6"
-              >
-                <p className="text-xs uppercase tracking-[0.16em] text-[var(--fin-accent)]">
-                  {item.area}
-                </p>
-                <h3 className="mt-2 text-2xl font-black text-white">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-sm text-[var(--fin-muted)]">
-                  {item.description}
-                </p>
-                <ul className="mt-4 grid gap-2 text-sm text-[var(--fin-muted-strong)]">
-                  {item.points.map((point) => (
-                    <li
-                      key={point}
-                      className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2"
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
+                Explore
+                <FaArrowRight />
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
+      <section
+        id="implementacion"
+        className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
+      >
         <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#071327,#0b2344)] p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
             Implementation
           </p>
           <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
-            Launch Your Operation in 3 Steps
+            Launch your operation in 3 steps
           </h2>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {steps.map((step, index) => (
@@ -282,7 +260,10 @@ export default function Home() {
       <ProductsComparison />
       <TestimonialsCarousel />
 
-      <section className="mx-auto w-full max-w-7xl px-5 pb-24 md:px-8">
+      <section
+        id="contacto"
+        className="mx-auto w-full max-w-7xl px-5 pb-24 md:px-8"
+      >
         <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(140deg,#132f57,#0f5d61)] p-8 md:p-12">
           <h2 className="text-3xl font-black text-white md:text-5xl">
             Ready to sell more and collect better?
@@ -296,12 +277,15 @@ export default function Home() {
               href="/more-information"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
             >
-              Talk to a Specialist
+              Talk to a specialist
               <FaArrowRight />
             </Link>
-            <p className="inline-flex items-center rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white">
-              customer@pagapay.mx
-            </p>
+            <Link
+              href="mailto:contacto@pagapay.mx"
+              className="inline-flex rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:border-white"
+            >
+              contacto@pagapay.mx
+            </Link>
           </div>
 
           <ContactForm />
@@ -328,67 +312,50 @@ const kpis = [
   { title: "Today's settlements", value: "$98,410" },
 ];
 
+const brands = [
+  { src: "/images/visa.png", alt: "Visa" },
+  { src: "/images/mastercard.png", alt: "Mastercard" },
+  { src: "/images/amex.png", alt: "American Express" },
+  { src: "/images/apple.png", alt: "Apple Pay" },
+  { src: "/images/sodexo.png", alt: "Sodexo" },
+  { src: "/images/sivale.png", alt: "Si Vale" },
+];
+
+const solutions = [
+  {
+    tag: "Omnichannel checkout",
+    title: "Payment links, QR, and terminals",
+    href: "/solutions#checkout",
+    description:
+      "Create payment links in seconds, process dynamic QR payments, and connect in-store terminals without changing providers.",
+  },
+  {
+    tag: "Risk intelligence",
+    title: "Adaptive fraud prevention",
+    href: "/solutions#risk",
+    description:
+      "Behavior-based risk models, custom rules, and authentication layers to protect every transaction.",
+  },
+  {
+    tag: "Centralized operations",
+    title: "Automated reporting and reconciliation",
+    href: "/solutions#operations",
+    description:
+      "Visualize sales by channel, export daily closeouts, and sync with your accounting team without manual workflows.",
+  },
+];
+
 const steps = [
   {
-    title: "Business Discovery",
+    title: "Business discovery",
     text: "We map your current payment flow and define the ideal architecture for eCommerce, retail, or services.",
   },
   {
-    title: "Guided Integration",
+    title: "Guided integration",
     text: "We configure your API or hosted checkout, activate fraud rules, and connect the most relevant payment methods.",
   },
   {
-    title: "Continuous Scale",
+    title: "Continuous scale",
     text: "We monitor performance, optimize approval rates, and propose improvements to increase revenue month after month.",
-  },
-];
-
-const hotelGallery = [
-  {
-    src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80",
-    title: "Connected Lobby and Front Desk",
-    text: "Automate pre-authorizations, no-show charges, and counter payments with full shift-level traceability.",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1400&q=80",
-    title: "Premium Guest Experience",
-    text: "Unify charges for upgrades, experiences, and room service under one reservation profile.",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1400&q=80",
-    title: "Operations and Finance Hub",
-    text: "Reconcile revenue by channel, monitor incidents, and generate daily closings by property.",
-  },
-];
-
-const hotelMetrics = [
-  { value: "-38%", label: "Less operational load at the front desk" },
-  { value: "+27%", label: "Growth in ancillary revenue" },
-  { value: "99.95%", label: "Platform availability" },
-  { value: "24/7", label: "Hospitality-specialized support" },
-];
-
-const hotelOperations = [
-  {
-    area: "Daily Operations",
-    title: "End-to-End Management for Each Property",
-    description:
-      "Control lodging, events, and F&B charges in one view with reporting by area, shift, and responsible user.",
-    points: [
-      "Express checkout with secure card tokenization",
-      "Alert panel for declines, chargebacks, and adjustments",
-      "Dedicated flows for agencies, corporate accounts, and large groups",
-    ],
-  },
-  {
-    area: "Leadership and Finance",
-    title: "Reconciliation, Audit, and Operational Governance",
-    description:
-      "Standardize revenue processes across independent hotels or chains with approval controls and full audit logs.",
-    points: [
-      "Automated reconciliation with PMS and ERP systems",
-      "Multi-currency cash closing with digital signature",
-      "Occupancy, ADR, and RevPAR KPIs linked to payments",
-    ],
   },
 ];

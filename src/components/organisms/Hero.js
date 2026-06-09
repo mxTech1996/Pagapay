@@ -46,7 +46,10 @@ export default function HeroSection() {
           <p className="mb-4 mt-6 max-w-md text-sm text-[var(--fin-muted)]">
             {dataSite.description}
           </p>
-          <button className="mt-2 rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10">
+          <button
+            onClick={() => (window.location.href = "/more-information")}
+            className="mt-2 rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+          >
             Contact Sales
           </button>
         </motion.div>

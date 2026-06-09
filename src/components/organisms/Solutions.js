@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const services = [
   {
-    title: "Contacless Payments",
+    title: "Contactless Payments",
     description:
       "Accept payments in-store with our secure contactless terminals",
     image: "/images/contactless.png",
@@ -14,10 +14,10 @@ const services = [
     title: "Online Payments",
     description:
       "Easily integrate our payment gateway into your website or app",
-    image: " /images/online.png",
+    image: "/images/online.png",
   },
   {
-    title: "Ecommerce And Dashboard",
+    title: "eCommerce and Dashboard",
     description:
       "Manage your transactions, refunds, and reports with our intuitive dashboard",
     image: "/images/dashboard.png",
@@ -33,7 +33,7 @@ export default function Solutions() {
         </h2>
         <p className="mb-12 text-[var(--fin-muted)]">
           Explore our secure, flexible, and scalable payment tools built for
-          modern businesses
+          modern businesses.
         </p>
 
         <div className="grid gap-8 md:grid-cols-3">
