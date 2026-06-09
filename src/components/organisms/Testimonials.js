@@ -3,38 +3,12 @@
 import { useState } from "react";
 import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-
-const testimonials = [
-  {
-    name: "Laura Mendez, E commerce Store Owner",
-    location: "Mexico City",
-    experience: "3 months using our service",
-    rating: 5,
-    comment:
-      "We've been using this payment platform for over a year, and the experience has been flawless. Transactions are fast, and the dashboard is very intuitive",
-    image: "/path-to-gabriela.jpg",
-  },
-  {
-    name: "Miguel Torres, Restaurant Owner",
-    location: "Puebla, Mexico",
-    experience: "6 months using our service",
-    rating: 5,
-    comment:
-      "Excellent customer service and easy-to-use payment terminals. They helped me scale my business operations quickly and securely.",
-    image: "/path-to-michael.jpg",
-  },
-  {
-    name: "Jose Hernandez, Retail Business Owner",
-    location: "Monterrey, Mexico",
-    experience: "4 months using our service",
-    rating: 5,
-    comment:
-      "Their technology and support are unmatched. We’ve improved our customer payment experience significantly since switching to their platform.",
-    image: "/path-to-sophie.jpg",
-  },
-];
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function TestimonialsCarousel() {
+  const { language } = useLanguage();
+  const t = testimonialsContent[language];
+  const testimonials = t.testimonials;
   const [index, setIndex] = useState(0);
 
   const handleNext = () => setIndex((prev) => (prev + 1) % testimonials.length);
@@ -49,7 +23,7 @@ export default function TestimonialsCarousel() {
       className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
     >
       <div className="mx-auto max-w-3xl rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#0b1d37,#0f3557)] p-7 text-center md:p-10">
-        <h2 className="mb-6 text-3xl font-black text-white">Success Stories</h2>
+        <h2 className="mb-6 text-3xl font-black text-white">{t.title}</h2>
         <div className="relative rounded-2xl border border-white/10 bg-black/20 p-6">
           <button
             onClick={handlePrev}
@@ -102,3 +76,64 @@ export default function TestimonialsCarousel() {
     </section>
   );
 }
+
+const testimonialsContent = {
+  en: {
+    title: "Success Stories",
+    testimonials: [
+      {
+        name: "Laura Mendez, E commerce Store Owner",
+        location: "Mexico City",
+        experience: "3 months using our service",
+        rating: 5,
+        comment:
+          "We've been using this payment platform for over a year, and the experience has been flawless. Transactions are fast, and the dashboard is very intuitive",
+      },
+      {
+        name: "Miguel Torres, Restaurant Owner",
+        location: "Puebla, Mexico",
+        experience: "6 months using our service",
+        rating: 5,
+        comment:
+          "Excellent customer service and easy-to-use payment terminals. They helped me scale my business operations quickly and securely.",
+      },
+      {
+        name: "Jose Hernandez, Retail Business Owner",
+        location: "Monterrey, Mexico",
+        experience: "4 months using our service",
+        rating: 5,
+        comment:
+          "Their technology and support are unmatched. We've improved our customer payment experience significantly since switching to their platform.",
+      },
+    ],
+  },
+  es: {
+    title: "Historias de exito",
+    testimonials: [
+      {
+        name: "Laura Mendez, Duena de tienda eCommerce",
+        location: "Ciudad de Mexico",
+        experience: "3 meses usando nuestro servicio",
+        rating: 5,
+        comment:
+          "Llevamos mas de un ano usando esta plataforma de pagos y la experiencia ha sido excelente. Las transacciones son rapidas y el dashboard es muy intuitivo.",
+      },
+      {
+        name: "Miguel Torres, Dueno de restaurante",
+        location: "Puebla, Mexico",
+        experience: "6 meses usando nuestro servicio",
+        rating: 5,
+        comment:
+          "Excelente servicio al cliente y terminales faciles de usar. Nos ayudaron a escalar la operacion de forma rapida y segura.",
+      },
+      {
+        name: "Jose Hernandez, Dueno de negocio retail",
+        location: "Monterrey, Mexico",
+        experience: "4 meses usando nuestro servicio",
+        rating: 5,
+        comment:
+          "Su tecnologia y soporte no tienen comparacion. Mejoramos significativamente la experiencia de pago de nuestros clientes desde que cambiamos de plataforma.",
+      },
+    ],
+  },
+};

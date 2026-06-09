@@ -1,6 +1,7 @@
 "use client";
 
 import { FaShoppingCart } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
 
 const terminalOptions = [
   {
@@ -67,11 +68,14 @@ const terminalOptions = [
 ];
 
 export default function ProductsComparison() {
+  const { language } = useLanguage();
+  const t = productsContent[language];
+
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
       <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#0a1d36,#0d2a48)] p-7 md:p-10">
         <h2 className="mb-8 text-center text-2xl font-black text-white">
-          Choose the Best Terminal for Your Business
+          {t.title}
         </h2>
         <div className="grid md:grid-cols-2 gap-6  ">
           {terminalOptions.map((terminal, index) => (
@@ -89,24 +93,30 @@ export default function ProductsComparison() {
               </h3>
               <ul className="mb-6 space-y-2 text-sm text-[var(--fin-muted)]">
                 <li>
-                  Magnetic Stripe:{" "}
-                  {terminal.features.MagneticStripe ? "Yes" : "No"}
+                  {t.magneticStripe}:{" "}
+                  {terminal.features.MagneticStripe ? t.yes : t.no}
                 </li>
-                <li>Chip Card: {terminal.features.ChipCard ? "Yes" : "No"}</li>
                 <li>
-                  Contactless / NFC:{" "}
-                  {terminal.features.Contactless ? "Yes" : "No"}
+                  {t.chipCard}: {terminal.features.ChipCard ? t.yes : t.no}
+                </li>
+                <li>
+                  {t.contactlessNfc}:{" "}
+                  {terminal.features.Contactless ? t.yes : t.no}
                 </li>
 
-                <li>Networks: {terminal.features.MobileNetworks}</li>
+                <li>
+                  {t.networks}: {terminal.features.MobileNetworks}
+                </li>
 
-                <li>Commission: {terminal.features.Fee}</li>
+                <li>
+                  {t.commission}: {terminal.features.Fee || t.custom}
+                </li>
               </ul>
               <button
                 onClick={() => (window.location.href = "/more-information")}
                 className="flex items-center gap-2 rounded-full bg-[var(--fin-primary)] px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
               >
-                More Info
+                {t.moreInfo}
                 <FaShoppingCart />
               </button>
             </div>
@@ -116,3 +126,30 @@ export default function ProductsComparison() {
     </section>
   );
 }
+
+const productsContent = {
+  en: {
+    title: "Choose the Best Terminal for Your Business",
+    magneticStripe: "Magnetic Stripe",
+    chipCard: "Chip Card",
+    contactlessNfc: "Contactless / NFC",
+    networks: "Networks",
+    commission: "Commission",
+    custom: "Custom",
+    moreInfo: "More Info",
+    yes: "Yes",
+    no: "No",
+  },
+  es: {
+    title: "Elige la mejor terminal para tu negocio",
+    magneticStripe: "Banda magnetica",
+    chipCard: "Tarjeta con chip",
+    contactlessNfc: "Contactless / NFC",
+    networks: "Redes",
+    commission: "Comision",
+    custom: "Personalizada",
+    moreInfo: "Mas informacion",
+    yes: "Si",
+    no: "No",
+  },
+};

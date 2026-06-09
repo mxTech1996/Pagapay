@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/context/LanguageContext";
 
 const initialState = {
   name: "",
@@ -13,6 +14,8 @@ const initialState = {
 
 export default function ContactForm() {
   const router = useRouter();
+  const { language } = useLanguage();
+  const t = formContent[language];
   const [form, setForm] = useState(initialState);
   const [status, setStatus] = useState("idle");
   const [feedback, setFeedback] = useState("");
@@ -39,17 +42,17 @@ export default function ContactForm() {
 
       if (!response.ok) {
         setStatus("error");
-        setFeedback(data?.error || "Could not send your message.");
+        setFeedback(data?.error || t.submitError);
         return;
       }
 
       setStatus("success");
-      setFeedback("Message sent successfully.");
+      setFeedback(t.submitSuccess);
       setShowSuccessDialog(true);
       setForm(initialState);
     } catch {
       setStatus("error");
-      setFeedback("Connection error. Please try again in a moment.");
+      setFeedback(t.connectionError);
     }
   };
 
@@ -61,7 +64,7 @@ export default function ContactForm() {
           name="name"
           value={form.name}
           onChange={handleChange}
-          placeholder="Full name"
+          placeholder={t.fullName}
           required
           className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
         />
@@ -70,7 +73,7 @@ export default function ContactForm() {
           name="email"
           value={form.email}
           onChange={handleChange}
-          placeholder="Contact email"
+          placeholder={t.contactEmail}
           required
           className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
         />
@@ -79,7 +82,7 @@ export default function ContactForm() {
           name="company"
           value={form.company}
           onChange={handleChange}
-          placeholder="Company"
+          placeholder={t.company}
           className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
         />
         <input
@@ -87,7 +90,7 @@ export default function ContactForm() {
           name="phone"
           value={form.phone}
           onChange={handleChange}
-          placeholder="Contact phone"
+          placeholder={t.contactPhone}
           required
           className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
         />
@@ -95,7 +98,7 @@ export default function ContactForm() {
           name="message"
           value={form.message}
           onChange={handleChange}
-          placeholder="Tell us about your business needs"
+          placeholder={t.messagePlaceholder}
           rows={5}
           required
           className="md:col-span-2 rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
@@ -107,11 +110,11 @@ export default function ContactForm() {
             disabled={status === "loading"}
             className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            {status === "loading" ? "Sending..." : "Send Message"}
+            {status === "loading" ? t.sending : t.sendMessage}
           </button>
 
           <p className="text-sm text-[var(--fin-muted)]">
-            Contact email: customer@pagapay.mx
+            {t.contactEmailLabel}: customer@pagapay.mx
           </p>
 
           <p className="text-sm text-[var(--fin-muted-strong)]">{feedback}</p>
@@ -121,9 +124,9 @@ export default function ContactForm() {
       {showSuccessDialog ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020915]/75 px-5">
           <div className="w-full max-w-md rounded-2xl border border-white/20 bg-[linear-gradient(145deg,#10294b,#0a1f38)] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
-            <h3 className="text-2xl font-black text-white">Message Sent</h3>
+            <h3 className="text-2xl font-black text-white">{t.modalTitle}</h3>
             <p className="mt-3 text-sm text-[var(--fin-muted-strong)]">
-              We will contact you shortly.
+              {t.modalText}
             </p>
             <button
               type="button"
@@ -133,7 +136,7 @@ export default function ContactForm() {
               }}
               className="mt-6 inline-flex items-center rounded-full bg-white px-6 py-2.5 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
             >
-              Got it
+              {t.modalButton}
             </button>
           </div>
         </div>
@@ -141,3 +144,38 @@ export default function ContactForm() {
     </>
   );
 }
+
+const formContent = {
+  en: {
+    fullName: "Full name",
+    contactEmail: "Contact email",
+    company: "Company",
+    contactPhone: "Contact phone",
+    messagePlaceholder: "Tell us about your business needs",
+    sending: "Sending...",
+    sendMessage: "Send message",
+    contactEmailLabel: "Contact email",
+    submitError: "Could not send your message.",
+    submitSuccess: "Message sent successfully.",
+    connectionError: "Connection error. Please try again in a moment.",
+    modalTitle: "Message sent",
+    modalText: "We will contact you shortly.",
+    modalButton: "Got it",
+  },
+  es: {
+    fullName: "Nombre completo",
+    contactEmail: "Correo de contacto",
+    company: "Empresa",
+    contactPhone: "Telefono de contacto",
+    messagePlaceholder: "Cuentanos sobre las necesidades de tu negocio",
+    sending: "Enviando...",
+    sendMessage: "Enviar mensaje",
+    contactEmailLabel: "Correo de contacto",
+    submitError: "No se pudo enviar tu mensaje.",
+    submitSuccess: "Mensaje enviado correctamente.",
+    connectionError: "Error de conexion. Intentalo de nuevo en un momento.",
+    modalTitle: "Mensaje enviado",
+    modalText: "Nos pondremos en contacto contigo en breve.",
+    modalButton: "Entendido",
+  },
+};

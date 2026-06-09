@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   FaArrowLeft,
@@ -6,6 +8,8 @@ import {
   FaChartLine,
   FaStore,
 } from "react-icons/fa6";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/context/LanguageContext";
 
 const pillars = [
   {
@@ -65,6 +69,11 @@ const journey = [
 ];
 
 export default function SolutionsPage() {
+  const { language } = useLanguage();
+  const t = solutionsPageContent[language];
+  const pillars = pillarsByLanguage[language];
+  const journey = journeyByLanguage[language];
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[var(--fin-bg)] text-[var(--fin-ink)]">
       <div className="pointer-events-none absolute inset-0">
@@ -79,20 +88,21 @@ export default function SolutionsPage() {
             className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white"
           >
             <FaArrowLeft />
-            Back to home
+            {t.backHome}
           </Link>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap items-center gap-3">
+            <LanguageSwitcher />
             <Link
               href="/pricing"
               className="inline-flex items-center rounded-full border border-[var(--fin-line)] px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/50"
             >
-              View pricing
+              {t.viewPricing}
             </Link>
             <Link
               href="/more-information"
               className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-accent)] px-5 py-2.5 text-sm font-bold text-[#02222a] transition hover:brightness-110"
             >
-              Schedule a consultation
+              {t.scheduleConsultation}
               <FaArrowRight />
             </Link>
           </div>
@@ -100,16 +110,13 @@ export default function SolutionsPage() {
 
         <div className="mt-8 rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#0b1f3a,#0f3658)] p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
-            Pagapay solutions
+            {t.sectionLabel}
           </p>
           <h1 className="mt-2 max-w-4xl text-3xl font-black text-white md:text-5xl">
-            A complete payments ecosystem to accelerate sales and streamline
-            operations
+            {t.title}
           </h1>
           <p className="mt-4 max-w-3xl text-[var(--fin-muted)] md:text-lg">
-            It is not just about collecting payments. It is about collecting
-            better: with less friction, lower risk, and more visibility for
-            business decisions.
+            {t.description}
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -148,10 +155,10 @@ export default function SolutionsPage() {
       <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
         <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#071327,#0b2344)] p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
-            How we work
+            {t.howWeWork}
           </p>
           <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
-            Implementation focused on results from week one
+            {t.implementationTitle}
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {journey.map((step, index) => (
@@ -177,19 +184,17 @@ export default function SolutionsPage() {
       <section className="mx-auto w-full max-w-7xl px-5 pb-24 md:px-8">
         <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(140deg,#132f57,#0f5d61)] p-8 md:p-12">
           <h2 className="text-3xl font-black text-white md:text-5xl">
-            Ready to activate the right solution for your business?
+            {t.finalTitle}
           </h2>
           <p className="mt-4 max-w-2xl text-[var(--fin-muted-strong)]">
-            We help you define the right plan by industry, volume, and channel.
-            Get a tailored proposal with implementation timelines and pricing
-            structure.
+            {t.finalDescription}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/more-information"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
             >
-              I want a proposal
+              {t.finalButton}
               <FaArrowRight />
             </Link>
             <Link
@@ -204,3 +209,102 @@ export default function SolutionsPage() {
     </main>
   );
 }
+
+const solutionsPageContent = {
+  en: {
+    backHome: "Back to home",
+    viewPricing: "View pricing",
+    scheduleConsultation: "Schedule a consultation",
+    sectionLabel: "Pagapay solutions",
+    title:
+      "A complete payments ecosystem to accelerate sales and streamline operations",
+    description:
+      "It is not just about collecting payments. It is about collecting better: with less friction, lower risk, and more visibility for business decisions.",
+    howWeWork: "How we work",
+    implementationTitle: "Implementation focused on results from week one",
+    finalTitle: "Ready to activate the right solution for your business?",
+    finalDescription:
+      "We help you define the right plan by industry, volume, and channel. Get a tailored proposal with implementation timelines and pricing structure.",
+    finalButton: "I want a proposal",
+  },
+  es: {
+    backHome: "Volver al inicio",
+    viewPricing: "Ver comisiones",
+    scheduleConsultation: "Agendar asesoria",
+    sectionLabel: "Soluciones Pagapay",
+    title:
+      "Un ecosistema de pagos completo para acelerar ventas y ordenar operaciones",
+    description:
+      "No se trata solo de cobrar. Se trata de cobrar mejor: con menos friccion, menor riesgo y mayor visibilidad para tomar decisiones de negocio.",
+    howWeWork: "Como trabajamos",
+    implementationTitle:
+      "Implementacion enfocada en resultados desde la primera semana",
+    finalTitle: "Listo para activar la solucion correcta para tu negocio?",
+    finalDescription:
+      "Te ayudamos a definir el plan correcto por industria, volumen y canales. Recibe una propuesta con tiempos de implementacion y estructura de comisiones.",
+    finalButton: "Quiero una propuesta",
+  },
+};
+
+const pillarsByLanguage = {
+  en: pillars,
+  es: [
+    {
+      id: "checkout",
+      icon: FaStore,
+      badge: "Checkout omnicanal",
+      title: "Cobra donde vende tu negocio",
+      description:
+        "Activa links de pago, cobro con QR y terminal fisica desde un solo panel. Mantienes la misma experiencia de marca en web, tienda y ventas por chat.",
+      highlights: [
+        "Links de pago personalizables",
+        "QR dinamico para tiendas fisicas",
+        "Terminales conectadas a reportes en tiempo real",
+      ],
+    },
+    {
+      id: "risk",
+      icon: FaShieldHalved,
+      badge: "Inteligencia de riesgo",
+      title: "Protege conversion sin bloquear buenas ventas",
+      description:
+        "Motor antifraude con reglas por monto, canal y comportamiento historico. Detecta patrones sospechosos y reduce contracargos.",
+      highlights: [
+        "Reglas por monto, BIN y origen",
+        "Alertas para operaciones fuera de patron",
+        "Recomendaciones de optimizacion por riesgo",
+      ],
+    },
+    {
+      id: "operations",
+      icon: FaChartLine,
+      badge: "Operacion centralizada",
+      title: "Toma decisiones con datos claros cada dia",
+      description:
+        "Concilia automaticamente, exporta cortes diarios y monitorea ingresos por metodo de pago.",
+      highlights: [
+        "Dashboard por sucursal y canal",
+        "Cierres y conciliacion automatica",
+        "Reportes listos para contabilidad",
+      ],
+    },
+  ],
+};
+
+const journeyByLanguage = {
+  en: journey,
+  es: [
+    {
+      title: "Diagnostico inicial",
+      text: "Mapeamos tu flujo actual de cobro y detectamos fricciones en aprobacion, abandono y conciliacion.",
+    },
+    {
+      title: "Implementacion guiada",
+      text: "Configuramos checkout, reglas de riesgo e integraciones para que empieces a cobrar rapido y seguro.",
+    },
+    {
+      title: "Optimizacion continua",
+      text: "Analizamos performance y proponemos mejoras semanales para aumentar conversion y rentabilidad.",
+    },
+  ],
+};

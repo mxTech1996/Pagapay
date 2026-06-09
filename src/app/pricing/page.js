@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/context/LanguageContext";
 
 const plans = [
   {
@@ -27,6 +31,9 @@ const plans = [
 ];
 
 export default function PricingPage() {
+  const { language } = useLanguage();
+  const t = pricingContent[language];
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[var(--fin-bg)] text-[var(--fin-ink)]">
       <div className="pointer-events-none absolute inset-0">
@@ -41,31 +48,33 @@ export default function PricingPage() {
             className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white"
           >
             <FaArrowLeft />
-            Back to home
+            {t.backHome}
           </Link>
-          <Link
-            href="/more-information"
-            className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-accent)] px-5 py-2.5 text-sm font-bold text-[#02222a] transition hover:brightness-110"
-          >
-            Talk to sales
-            <FaArrowRight />
-          </Link>
+          <div className="flex items-center gap-3">
+            <LanguageSwitcher />
+            <Link
+              href="/more-information"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-accent)] px-5 py-2.5 text-sm font-bold text-[#02222a] transition hover:brightness-110"
+            >
+              {t.talkToSales}
+              <FaArrowRight />
+            </Link>
+          </div>
         </div>
 
         <div className="mt-8 rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#0b1f3a,#0f3658)] p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
-            Pricing
+            {t.label}
           </p>
           <h1 className="mt-2 text-3xl font-black text-white md:text-5xl">
-            Plans designed for every stage of your business
+            {t.title}
           </h1>
           <p className="mt-4 max-w-3xl text-[var(--fin-muted)] md:text-lg">
-            Choose a clear pricing structure and scale when your volume grows.
-            No hidden fees.
+            {t.description}
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {plans.map((plan) => (
+            {plansByLanguage[language].map((plan) => (
               <article
                 key={plan.title}
                 className="rounded-2xl border border-white/15 bg-black/20 p-5"
@@ -93,7 +102,7 @@ export default function PricingPage() {
               href="/more-information"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
             >
-              Request proposal
+              {t.requestProposal}
               <FaArrowRight />
             </Link>
             <Link
@@ -108,3 +117,53 @@ export default function PricingPage() {
     </main>
   );
 }
+
+const pricingContent = {
+  en: {
+    backHome: "Back to home",
+    talkToSales: "Talk to sales",
+    label: "Pricing",
+    title: "Plans designed for every stage of your business",
+    description:
+      "Choose a clear pricing structure and scale when your volume grows. No hidden fees.",
+    requestProposal: "Request proposal",
+  },
+  es: {
+    backHome: "Volver al inicio",
+    talkToSales: "Hablar con ventas",
+    label: "Comisiones",
+    title: "Planes pensados para cada etapa de tu negocio",
+    description:
+      "Elige una estructura de comisiones clara y escala cuando tu volumen lo necesite. Sin cargos escondidos.",
+    requestProposal: "Solicitar propuesta",
+  },
+};
+
+const plansByLanguage = {
+  en: plans,
+  es: [
+    {
+      title: "Starter",
+      fee: "3.4% + IVA",
+      description: "Ideal para comercios en crecimiento con volumen inicial.",
+      features: ["Cobros por link", "Dashboard basico", "Soporte por correo"],
+    },
+    {
+      title: "Growth",
+      fee: "2.9% + IVA",
+      description:
+        "Para equipos con operacion omnicanal y necesidad de escalar.",
+      features: [
+        "Link + QR + terminal",
+        "Reglas antifraude",
+        "Conciliacion avanzada",
+      ],
+    },
+    {
+      title: "Enterprise",
+      fee: "Tarifa personalizada",
+      description: "Para alto volumen, multiples sucursales y SLA dedicado.",
+      features: ["Integracion a medida", "Manager dedicado", "SLA prioritario"],
+    },
+  ],
+};

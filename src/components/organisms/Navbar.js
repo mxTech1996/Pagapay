@@ -3,9 +3,12 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function StickyNavbar() {
   const [scrolled, setScrolled] = useState(false);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +60,7 @@ export default function StickyNavbar() {
 
         {/* Actions */}
         <div className="flex items-center space-x-4">
+          <LanguageSwitcher className="hidden md:inline-flex" />
           <Link
             href="/my-cart"
             className="text-[#1A2F50] hover:text-blue-600"
@@ -69,7 +73,7 @@ export default function StickyNavbar() {
             onClick={() => (window.location.href = "/more-information")}
             className="px-4 py-2 border border-[#1A2F50] text-[#1A2F50] rounded hover:bg-blue-50 transition"
           >
-            Contact Us
+            {language === "es" ? "Contacto" : "Contact Us"}
           </button>
         </div>
       </div>
