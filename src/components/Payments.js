@@ -37,8 +37,8 @@ const PaymentMethods = () => {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="flex flex-col items-center justify-center rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#0d2748,#0a1d37)] px-4 py-16 sm:px-6 lg:px-8">
-        <h2 className="mb-4 text-center text-3xl font-black text-white sm:text-4xl">
+      <div className="corp-surface flex flex-col items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
+        <h2 className="mb-4 text-center text-3xl font-black text-[var(--fin-ink)] sm:text-4xl">
           {t.title}
         </h2>
         <p className="mb-10 max-w-xl text-center text-lg text-[var(--fin-muted)]">

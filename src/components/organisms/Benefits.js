@@ -18,21 +18,23 @@ export default function BenefitsSection() {
       id="know-us"
       className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
     >
-      <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#0a1f3a,#0d2f55)] p-7 text-center md:p-10">
-        <h2 className="mb-2 text-3xl font-black text-white">{t.title}</h2>
+      <div className="corp-surface p-7 text-center md:p-10">
+        <h2 className="mb-2 text-3xl font-black text-[var(--fin-ink)]">
+          {t.title}
+        </h2>
         <p className="mb-12 text-[var(--fin-muted)]">{t.description}</p>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {t.features.map((feature, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
-              className="flex flex-col items-center rounded-2xl border border-white/10 bg-black/20 p-6 shadow-sm"
+              whileHover={{ scale: 1.01 }}
+              className="corp-card flex flex-col items-center p-6"
             >
               <div className="mb-4 text-[var(--fin-accent)]">
                 {feature.icon}
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-white">
+              <h3 className="mb-2 text-lg font-semibold text-[var(--fin-ink)]">
                 {feature.title}
               </h3>
               <p className="text-sm text-[var(--fin-muted)]">

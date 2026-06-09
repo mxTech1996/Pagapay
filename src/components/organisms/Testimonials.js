@@ -18,16 +18,15 @@ export default function TestimonialsCarousel() {
   const testimonial = testimonials[index];
 
   return (
-    <section
-      id="testimonials"
-      className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
-    >
-      <div className="mx-auto max-w-3xl rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#0b1d37,#0f3557)] p-7 text-center md:p-10">
-        <h2 className="mb-6 text-3xl font-black text-white">{t.title}</h2>
-        <div className="relative rounded-2xl border border-white/10 bg-black/20 p-6">
+    <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
+      <div className="corp-surface mx-auto max-w-3xl p-7 text-center md:p-10">
+        <h2 className="mb-6 text-3xl font-black text-[var(--fin-ink)]">
+          {t.title}
+        </h2>
+        <div className="corp-card relative p-6">
           <button
             onClick={handlePrev}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2"
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"
           >
             <FaChevronLeft />
           </button>
@@ -45,7 +44,7 @@ export default function TestimonialsCarousel() {
                   alt={testimonial.name}
                   className='w-24 h-24 rounded-full object-cover mb-4 shadow-md'
                 /> */}
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-[var(--fin-ink)]">
                   {testimonial.name}
                 </h3>
                 <p className="mb-4 mt-2 text-[var(--fin-muted)]">
@@ -67,7 +66,7 @@ export default function TestimonialsCarousel() {
           </AnimatePresence>
           <button
             onClick={handleNext}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2"
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"
           >
             <FaChevronRight />
           </button>

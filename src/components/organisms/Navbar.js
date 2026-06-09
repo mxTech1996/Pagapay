@@ -20,8 +20,8 @@ export default function StickyNavbar() {
 
   return (
     <nav
-      className={`w-full fixed top-0 left-0 z-50 bg-white transition-shadow ${
-        scrolled ? "shadow-md" : ""
+      className={`fixed left-0 top-0 z-50 w-full border-b border-[var(--fin-line)] bg-white/95 backdrop-blur-md transition-shadow ${
+        scrolled ? "shadow-[0_10px_24px_rgba(15,31,57,0.12)]" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
@@ -35,24 +35,27 @@ export default function StickyNavbar() {
 
         {/* Links */}
         <div className="hidden items-center space-x-6 md:flex">
-          <Link href="/" className="text-sm font-semibold hover:text-blue-600">
+          <Link
+            href="/"
+            className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"
+          >
             Home
           </Link>
           <Link
             href="/solutions"
-            className="text-sm font-semibold hover:text-blue-600"
+            className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"
           >
             Solutions
           </Link>
           <Link
             href="/pricing"
-            className="text-sm font-semibold hover:text-blue-600"
+            className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"
           >
             Pricing
           </Link>
           <Link
             href="/more-information"
-            className="text-sm font-semibold hover:text-blue-600"
+            className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"
           >
             Contact
           </Link>
@@ -63,7 +66,7 @@ export default function StickyNavbar() {
           <LanguageSwitcher className="hidden md:inline-flex" />
           <Link
             href="/my-cart"
-            className="text-[#1A2F50] hover:text-blue-600"
+            className="text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"
             aria-label="Go to cart"
           >
             <FaShoppingCart />
@@ -71,7 +74,7 @@ export default function StickyNavbar() {
           <button
             //open link "/more-informatio"
             onClick={() => (window.location.href = "/more-information")}
-            className="px-4 py-2 border border-[#1A2F50] text-[#1A2F50] rounded hover:bg-blue-50 transition"
+            className="corp-btn-accent px-4 py-2 text-sm font-semibold transition hover:brightness-110"
           >
             {language === "es" ? "Contacto" : "Contact Us"}
           </button>

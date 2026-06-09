@@ -66,7 +66,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder={t.fullName}
           required
-          className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
+          className="rounded-md border border-[var(--fin-line)] bg-white px-4 py-3 text-sm text-[var(--fin-ink)] placeholder:text-[var(--fin-muted)] focus:border-[var(--fin-primary)] focus:outline-none"
         />
         <input
           type="email"
@@ -75,7 +75,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder={t.contactEmail}
           required
-          className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
+          className="rounded-md border border-[var(--fin-line)] bg-white px-4 py-3 text-sm text-[var(--fin-ink)] placeholder:text-[var(--fin-muted)] focus:border-[var(--fin-primary)] focus:outline-none"
         />
         <input
           type="text"
@@ -83,7 +83,7 @@ export default function ContactForm() {
           value={form.company}
           onChange={handleChange}
           placeholder={t.company}
-          className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
+          className="rounded-md border border-[var(--fin-line)] bg-white px-4 py-3 text-sm text-[var(--fin-ink)] placeholder:text-[var(--fin-muted)] focus:border-[var(--fin-primary)] focus:outline-none"
         />
         <input
           type="tel"
@@ -92,7 +92,7 @@ export default function ContactForm() {
           onChange={handleChange}
           placeholder={t.contactPhone}
           required
-          className="rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
+          className="rounded-md border border-[var(--fin-line)] bg-white px-4 py-3 text-sm text-[var(--fin-ink)] placeholder:text-[var(--fin-muted)] focus:border-[var(--fin-primary)] focus:outline-none"
         />
         <textarea
           name="message"
@@ -101,14 +101,14 @@ export default function ContactForm() {
           placeholder={t.messagePlaceholder}
           rows={5}
           required
-          className="md:col-span-2 rounded-xl border border-white/20 bg-black/20 px-4 py-3 text-sm text-white placeholder:text-[var(--fin-muted)] focus:border-white/40 focus:outline-none"
+          className="md:col-span-2 rounded-md border border-[var(--fin-line)] bg-white px-4 py-3 text-sm text-[var(--fin-ink)] placeholder:text-[var(--fin-muted)] focus:border-[var(--fin-primary)] focus:outline-none"
         />
 
         <div className="md:col-span-2 flex flex-wrap items-center gap-4">
           <button
             type="submit"
             disabled={status === "loading"}
-            className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa] disabled:cursor-not-allowed disabled:opacity-70"
+            className="corp-btn-accent inline-flex items-center px-6 py-3 text-sm font-black transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-70"
           >
             {status === "loading" ? t.sending : t.sendMessage}
           </button>
@@ -122,9 +122,11 @@ export default function ContactForm() {
       </form>
 
       {showSuccessDialog ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#020915]/75 px-5">
-          <div className="w-full max-w-md rounded-2xl border border-white/20 bg-[linear-gradient(145deg,#10294b,#0a1f38)] p-6 text-center shadow-[0_20px_60px_rgba(0,0,0,0.45)]">
-            <h3 className="text-2xl font-black text-white">{t.modalTitle}</h3>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/70 px-5 backdrop-blur-sm">
+          <div className="corp-surface w-full max-w-md p-6 text-center shadow-[0_20px_60px_rgba(15,31,57,0.18)]">
+            <h3 className="text-2xl font-black text-[var(--fin-ink)]">
+              {t.modalTitle}
+            </h3>
             <p className="mt-3 text-sm text-[var(--fin-muted-strong)]">
               {t.modalText}
             </p>
@@ -134,7 +136,7 @@ export default function ContactForm() {
                 setShowSuccessDialog(false);
                 router.push("/");
               }}
-              className="mt-6 inline-flex items-center rounded-full bg-white px-6 py-2.5 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
+              className="corp-btn-accent mt-6 inline-flex items-center px-6 py-2.5 text-sm font-black transition hover:brightness-110"
             >
               {t.modalButton}
             </button>

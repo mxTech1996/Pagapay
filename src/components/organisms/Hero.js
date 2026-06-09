@@ -10,7 +10,7 @@ export default function HeroSection() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="grid gap-10 rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(145deg,#10294b,#0a1f38)] p-7 md:grid-cols-2 md:p-10">
+      <div className="corp-surface grid gap-10 p-7 md:grid-cols-2 md:p-10">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -18,15 +18,15 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
           className="relative"
         >
-          <div className="rounded-3xl border border-white/10 bg-black/20 p-8 md:p-10">
+          <div className="corp-card p-8 md:p-10">
             <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--fin-accent)]">
               {t.weAre}
             </p>
-            <h1 className="mb-4 text-3xl font-black leading-tight text-white md:text-5xl">
+            <h1 className="mb-4 text-3xl font-black leading-tight text-[var(--fin-ink)] md:text-5xl">
               {t.subtitle}
             </h1>
             <p className="text-lg text-[var(--fin-muted)]">
-              <span className="font-bold text-[var(--fin-accent)]">
+              <span className="font-bold text-[var(--fin-primary)]">
                 Pagapay
               </span>
             </p>
@@ -44,7 +44,7 @@ export default function HeroSection() {
           <img
             src={dataSite.image_hero}
             alt="Hero Image"
-            className="mt-4 h-[300px] w-full max-w-[420px] rounded-2xl border border-white/10 object-cover"
+            className="mt-4 h-[300px] w-full max-w-[420px] border border-[var(--fin-line)] object-cover"
           />
 
           <p className="mb-4 mt-6 max-w-md text-sm text-[var(--fin-muted)]">
@@ -52,7 +52,7 @@ export default function HeroSection() {
           </p>
           <button
             onClick={() => (window.location.href = "/more-information")}
-            className="mt-2 rounded-full border border-white/25 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+            className="corp-btn-secondary mt-2 px-5 py-2.5 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
           >
             {t.contactSales}
           </button>

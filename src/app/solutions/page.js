@@ -76,16 +76,13 @@ export default function SolutionsPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[var(--fin-bg)] text-[var(--fin-ink)]">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="hero-orb hero-orb--one" />
-        <div className="hero-orb hero-orb--two" />
-      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]" />
 
       <section className="relative mx-auto w-full max-w-7xl px-5 py-12 md:px-8 md:py-16">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white"
+            className="corp-btn-secondary inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
           >
             <FaArrowLeft />
             {t.backHome}
@@ -94,13 +91,13 @@ export default function SolutionsPage() {
             <LanguageSwitcher />
             <Link
               href="/pricing"
-              className="inline-flex items-center rounded-full border border-[var(--fin-line)] px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/50"
+              className="corp-btn-secondary inline-flex items-center px-5 py-2.5 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
             >
               {t.viewPricing}
             </Link>
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-accent)] px-5 py-2.5 text-sm font-bold text-[#02222a] transition hover:brightness-110"
+              className="corp-btn-accent inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition hover:brightness-110"
             >
               {t.scheduleConsultation}
               <FaArrowRight />
@@ -108,11 +105,11 @@ export default function SolutionsPage() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#0b1f3a,#0f3658)] p-7 md:p-10">
+        <div className="corp-surface mt-8 p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
             {t.sectionLabel}
           </p>
-          <h1 className="mt-2 max-w-4xl text-3xl font-black text-white md:text-5xl">
+          <h1 className="mt-2 max-w-4xl text-3xl font-black text-[var(--fin-ink)] md:text-5xl">
             {t.title}
           </h1>
           <p className="mt-4 max-w-3xl text-[var(--fin-muted)] md:text-lg">
@@ -126,15 +123,15 @@ export default function SolutionsPage() {
                 <article
                   id={pillar.id}
                   key={pillar.id}
-                  className="rounded-2xl border border-white/15 bg-black/20 p-5"
+                  className="corp-card p-5"
                 >
-                  <div className="inline-flex rounded-xl bg-[#163a67] p-2 text-[var(--fin-accent)]">
+                  <div className="inline-flex border border-[var(--fin-line)] bg-[var(--corp-surface-2)] p-2 text-[var(--fin-accent)]">
                     <Icon />
                   </div>
                   <p className="mt-3 text-xs uppercase tracking-[0.14em] text-[var(--fin-muted)]">
                     {pillar.badge}
                   </p>
-                  <h2 className="mt-2 text-2xl font-black text-white">
+                  <h2 className="mt-2 text-2xl font-black text-[var(--fin-ink)]">
                     {pillar.title}
                   </h2>
                   <p className="mt-3 text-sm text-[var(--fin-muted)]">
@@ -153,23 +150,20 @@ export default function SolutionsPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#071327,#0b2344)] p-7 md:p-10">
+        <div className="corp-surface p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
             {t.howWeWork}
           </p>
-          <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
+          <h2 className="mt-2 text-3xl font-black text-[var(--fin-ink)] md:text-4xl">
             {t.implementationTitle}
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {localizedJourney.map((step, index) => (
-              <article
-                key={step.title}
-                className="rounded-2xl border border-white/10 bg-black/20 p-5"
-              >
+              <article key={step.title} className="corp-card p-5">
                 <p className="text-sm font-black text-[var(--fin-accent)]">
                   0{index + 1}
                 </p>
-                <h3 className="mt-1 text-xl font-bold text-white">
+                <h3 className="mt-1 text-xl font-bold text-[var(--fin-ink)]">
                   {step.title}
                 </h3>
                 <p className="mt-2 text-sm text-[var(--fin-muted)]">
@@ -182,8 +176,8 @@ export default function SolutionsPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-5 pb-24 md:px-8">
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(140deg,#132f57,#0f5d61)] p-8 md:p-12">
-          <h2 className="text-3xl font-black text-white md:text-5xl">
+        <div className="corp-surface p-8 md:p-12">
+          <h2 className="text-3xl font-black text-[var(--fin-ink)] md:text-5xl">
             {t.finalTitle}
           </h2>
           <p className="mt-4 max-w-2xl text-[var(--fin-muted-strong)]">
@@ -192,14 +186,14 @@ export default function SolutionsPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
+              className="corp-btn-accent inline-flex items-center gap-2 px-6 py-3 text-sm font-black transition hover:brightness-110"
             >
               {t.finalButton}
               <FaArrowRight />
             </Link>
             <Link
               href="mailto:customer@pagapay.mx"
-              className="inline-flex rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:border-white"
+              className="corp-btn-secondary inline-flex px-6 py-3 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
             >
               customer@pagapay.mx
             </Link>

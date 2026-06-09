@@ -73,22 +73,22 @@ export default function ProductsComparison() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#0a1d36,#0d2a48)] p-7 md:p-10">
-        <h2 className="mb-8 text-center text-2xl font-black text-white">
+      <div className="corp-surface p-7 md:p-10">
+        <h2 className="mb-8 text-center text-2xl font-black text-[var(--fin-ink)]">
           {t.title}
         </h2>
         <div className="grid md:grid-cols-2 gap-6  ">
           {terminalOptions.map((terminal, index) => (
             <div
               key={index}
-              className="flex flex-col items-center rounded-2xl border border-white/10 bg-black/20 p-6 text-center shadow-sm"
+              className="corp-card flex flex-col items-center p-6 text-center"
             >
               <img
                 src={terminal.image}
                 alt={terminal.name}
                 className="h-24 mb-4"
               />
-              <h3 className="mb-4 text-xl font-semibold text-white">
+              <h3 className="mb-4 text-xl font-semibold text-[var(--fin-ink)]">
                 {terminal.name}
               </h3>
               <ul className="mb-6 space-y-2 text-sm text-[var(--fin-muted)]">
@@ -114,7 +114,7 @@ export default function ProductsComparison() {
               </ul>
               <button
                 onClick={() => (window.location.href = "/more-information")}
-                className="flex items-center gap-2 rounded-full bg-[var(--fin-primary)] px-5 py-2.5 text-sm font-bold text-white transition hover:brightness-110"
+                className="corp-btn-primary flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition hover:brightness-110"
               >
                 {t.moreInfo}
                 <FaShoppingCart />

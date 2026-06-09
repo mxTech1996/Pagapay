@@ -18,38 +18,40 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function Home() {
   const { language } = useLanguage();
   const t = homeContent[language];
+  const sectionLinks = sectionLinksByLanguage[language];
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[var(--fin-bg)] text-[var(--fin-ink)]">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="hero-orb hero-orb--one" />
-        <div className="hero-orb hero-orb--two" />
-      </div>
-
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#041126]/80 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+    <main className="enterprise-shell min-h-screen bg-[var(--fin-bg)] text-[var(--fin-ink)]">
+      <header className="sticky top-0 z-40 border-b border-[var(--fin-line)] bg-white/95 backdrop-blur-sm">
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-5 py-4 md:px-8">
           <Link href="/" className="group flex items-center gap-3">
-            <div className="relative h-11 w-11 overflow-hidden rounded-xl ring-1 ring-white/20">
+            <div className="relative h-20 w-20 overflow-hidden  border-[var(--fin-line)] bg-white">
               <Image
                 src="/images/logo.png"
                 alt="Pagapay"
                 fill
-                className="object-cover transition duration-500 group-hover:scale-110"
+                className="object-contain"
               />
             </div>
-            <div>
-              <p className="text-sm text-white/70">{t.paymentEcosystem}</p>
-              <p className="text-xl font-black tracking-wide text-white">
-                PAGAPAY
-              </p>
-            </div>
           </Link>
+
+          <nav className="hidden items-center gap-3 lg:flex">
+            {sectionLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="border-b border-transparent px-1 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-[var(--fin-muted-strong)] transition hover:border-[var(--fin-primary)] hover:text-[var(--fin-ink)]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-accent)] px-5 py-2.5 text-sm font-bold text-[#02222a] transition hover:brightness-110"
+              className="corp-btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition hover:brightness-110"
             >
               {t.talkToSales}
               <FaArrowRight />
@@ -60,48 +62,48 @@ export default function Home() {
 
       <section
         id="inicio"
-        className="relative mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 pt-14 md:grid-cols-2 md:px-8 md:pt-20"
+        className="scroll-mt-28 mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 pt-14 md:grid-cols-2 md:px-8 md:pt-20"
       >
-        <div className="reveal-up flex flex-col justify-center">
-          <p className="mb-4 w-max rounded-full border border-[var(--fin-line)] bg-white/5 px-4 py-1.5 text-sm text-[var(--fin-muted)]">
+        <div className="flex flex-col justify-center">
+          <p className="mb-4 w-max border border-[var(--fin-line)] bg-white px-4 py-1.5 text-sm text-[var(--fin-muted)]">
             {t.heroBadge}
           </p>
-          <h1 className="text-4xl font-black leading-tight text-white md:text-6xl">
+          <h1 className="enterprise-title text-4xl font-black leading-tight md:text-6xl">
             {t.heroTitleLine1}
-            <span className="block text-[var(--fin-accent)]">
+            <span className="block text-[var(--fin-primary)]">
               {t.heroTitleLine2}
             </span>
           </h1>
-          <p className="mt-5 max-w-xl text-base text-[var(--fin-muted)] md:text-lg">
+          <p className="enterprise-subtitle mt-5 max-w-xl text-base md:text-lg">
             {t.heroDescription}
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-primary)] px-6 py-3 text-sm font-bold text-white transition hover:brightness-110"
+              className="corp-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-bold transition hover:brightness-110"
             >
               {t.requestDemo}
               <FaArrowRight />
             </Link>
             <Link
               href="/solutions"
-              className="inline-flex items-center rounded-full border border-[var(--fin-line)] px-6 py-3 text-sm font-semibold text-white/90 transition hover:border-white/40 hover:text-white"
+              className="corp-btn-secondary inline-flex items-center px-6 py-3 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
             >
               {t.viewSolutions}
             </Link>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-3 text-center sm:max-w-md">
+          <div className="mt-10 border border-[var(--fin-line)] bg-white">
             {statsByLanguage[language].map((item) => (
               <article
                 key={item.label}
-                className="rounded-2xl border border-[var(--fin-line)] bg-white/[0.03] px-4 py-3"
+                className="enterprise-row grid grid-cols-2 px-4 py-3"
               >
-                <p className="text-xl font-black text-white md:text-2xl">
+                <p className="text-lg font-black text-[var(--fin-ink)] md:text-xl">
                   {item.value}
                 </p>
-                <p className="text-xs text-[var(--fin-muted)] md:text-sm">
+                <p className="text-right text-sm text-[var(--fin-muted)]">
                   {item.label}
                 </p>
               </article>
@@ -109,44 +111,44 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="reveal-up reveal-up-delay">
-          <div className="relative mx-auto w-full max-w-xl rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(165deg,rgba(26,58,104,0.75),rgba(9,23,44,0.95))] p-6 shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
+        <div>
+          <div className="enterprise-section p-6">
             <p className="text-sm text-[var(--fin-muted)]">
               {t.dashboardLabel}
             </p>
-            <h2 className="mt-2 text-2xl font-black text-white">
+            <h2 className="enterprise-title mt-2 text-2xl font-black">
               {t.dashboardTitle}
             </h2>
-            <p className="mt-1 text-4xl font-black text-[var(--fin-accent)]">
+            <p className="mt-1 text-4xl font-black text-[var(--fin-primary)]">
               $148,320
             </p>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 border border-[var(--fin-line)]">
               {kpisByLanguage[language].map((kpi) => (
                 <div
                   key={kpi.title}
-                  className="rounded-2xl border border-white/10 bg-black/20 p-4"
+                  className="enterprise-row grid grid-cols-2 px-4 py-3"
                 >
-                  <p className="text-xs uppercase tracking-[0.14em] text-[var(--fin-muted)]">
+                  <p className="text-xs uppercase tracking-[0.12em] text-[var(--fin-muted)]">
                     {kpi.title}
                   </p>
-                  <p className="mt-2 text-xl font-bold text-white">
+                  <p className="text-right text-lg font-bold text-[var(--fin-ink)]">
                     {kpi.value}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 p-4">
+            <div className="enterprise-divider mt-6 pt-4">
               <p className="text-sm text-[var(--fin-muted)]">
                 {t.transparentFees}
               </p>
-              <p className="mt-1 text-2xl font-black text-white">
+              <p className="mt-1 text-2xl font-black text-[var(--fin-ink)]">
                 {t.feesValue}
               </p>
               <Link
                 href="/pricing"
-                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--fin-accent)] transition hover:text-white"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[var(--fin-primary)] transition hover:brightness-90"
               >
                 {t.viewPricing}
                 <FaArrowRight />
@@ -158,9 +160,9 @@ export default function Home() {
 
       <section
         id="aceptamos"
-        className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
+        className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
       >
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-white/[0.03] p-6 md:p-10">
+        <div className="enterprise-section p-6 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
             {t.weAccept}
           </p>
@@ -168,7 +170,7 @@ export default function Home() {
             {brands.map((brand) => (
               <div
                 key={brand.alt}
-                className="flex h-20 items-center justify-center rounded-2xl border border-white/10 bg-[#0e2444] p-4"
+                className="flex h-20 items-center justify-center border border-[var(--fin-line)] bg-white p-4"
               >
                 <Image
                   src={brand.src}
@@ -185,37 +187,37 @@ export default function Home() {
 
       <section
         id="products"
-        className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
+        className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
       >
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
-              {t.solutionsLabel}
-            </p>
-            <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
-              {t.solutionsTitle}
-            </h2>
-          </div>
+        <div className="mb-8">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+            {t.solutionsLabel}
+          </p>
+          <h2 className="enterprise-title mt-2 text-3xl font-black md:text-4xl">
+            {t.solutionsTitle}
+          </h2>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="enterprise-section divide-y divide-[var(--fin-line)]">
           {solutionsByLanguage[language].map((solution) => (
             <article
               key={solution.title}
-              className="group rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#0b1e3b,#08162d)] p-6 transition duration-300 hover:-translate-y-1 hover:border-white/30"
+              className="grid gap-3 p-6 md:grid-cols-[220px_1fr_auto] md:items-center"
             >
-              <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+              <p className="text-xs uppercase tracking-[0.16em] text-[var(--fin-muted)]">
                 {solution.tag}
               </p>
-              <h3 className="mt-3 text-2xl font-black text-white">
-                {solution.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--fin-muted)]">
-                {solution.description}
-              </p>
+              <div>
+                <h3 className="text-2xl font-black text-[var(--fin-ink)]">
+                  {solution.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--fin-muted)]">
+                  {solution.description}
+                </p>
+              </div>
               <Link
                 href={solution.href}
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--fin-accent)] transition hover:text-white"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--fin-primary)] transition hover:brightness-90"
               >
                 {t.explore}
                 <FaArrowRight />
@@ -225,23 +227,26 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#061833,#0f3650)] p-7 md:p-10">
+      <section
+        id="hoteleria"
+        className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
+      >
+        <div className="enterprise-section p-7 md:p-10">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div className="max-w-3xl">
-              <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
+              <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-primary)]">
                 {hotelContentByLanguage[language].label}
               </p>
-              <h2 className="mt-2 text-3xl font-black text-white md:text-5xl">
+              <h2 className="enterprise-title mt-2 text-3xl font-black md:text-5xl">
                 {hotelContentByLanguage[language].title}
               </h2>
-              <p className="mt-4 text-[var(--fin-muted)] md:text-lg">
+              <p className="enterprise-subtitle mt-4 md:text-lg">
                 {hotelContentByLanguage[language].description}
               </p>
             </div>
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
+              className="corp-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-black transition hover:brightness-110"
             >
               {hotelContentByLanguage[language].cta}
               <FaArrowRight />
@@ -252,7 +257,7 @@ export default function Home() {
             {hotelGalleryByLanguage[language].map((item) => (
               <article
                 key={item.title}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-black/20"
+                className="border border-[var(--fin-line)] bg-white"
               >
                 <div className="relative h-52 w-full">
                   <img
@@ -262,7 +267,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="text-xl font-black text-white">
+                  <h3 className="text-xl font-black text-[var(--fin-ink)]">
                     {item.title}
                   </h3>
                   <p className="mt-2 text-sm text-[var(--fin-muted)]">
@@ -273,13 +278,13 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-4">
+          <div className="mt-8 grid border border-[var(--fin-line)] md:grid-cols-4">
             {hotelMetricsByLanguage[language].map((metric) => (
               <article
                 key={metric.label}
-                className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-center"
+                className="enterprise-row border-r border-[var(--fin-line)] px-5 py-4 md:last:border-r-0"
               >
-                <p className="text-3xl font-black text-[var(--fin-accent)]">
+                <p className="text-3xl font-black text-[var(--fin-primary)]">
                   {metric.value}
                 </p>
                 <p className="mt-1 text-sm text-[var(--fin-muted)]">
@@ -293,12 +298,12 @@ export default function Home() {
             {hotelOperationsByLanguage[language].map((item) => (
               <article
                 key={item.title}
-                className="rounded-2xl border border-white/10 bg-black/20 p-6"
+                className="border border-[var(--fin-line)] bg-white p-6"
               >
-                <p className="text-xs uppercase tracking-[0.16em] text-[var(--fin-accent)]">
+                <p className="text-xs uppercase tracking-[0.16em] text-[var(--fin-primary)]">
                   {item.area}
                 </p>
-                <h3 className="mt-2 text-2xl font-black text-white">
+                <h3 className="mt-2 text-2xl font-black text-[var(--fin-ink)]">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm text-[var(--fin-muted)]">
@@ -308,7 +313,7 @@ export default function Home() {
                   {item.points.map((point) => (
                     <li
                       key={point}
-                      className="rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2"
+                      className="border-l-2 border-[var(--fin-primary)] bg-[var(--corp-surface-2)] px-3 py-2"
                     >
                       {point}
                     </li>
@@ -322,25 +327,25 @@ export default function Home() {
 
       <section
         id="implementacion"
-        className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
+        className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
       >
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(160deg,#071327,#0b2344)] p-7 md:p-10">
+        <div className="enterprise-section p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
             {t.implementationLabel}
           </p>
-          <h2 className="mt-2 text-3xl font-black text-white md:text-4xl">
+          <h2 className="enterprise-title mt-2 text-3xl font-black md:text-4xl">
             {t.implementationTitle}
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-8 grid border border-[var(--fin-line)] md:grid-cols-3">
             {stepsByLanguage[language].map((step, index) => (
               <article
                 key={step.title}
-                className="rounded-2xl border border-white/10 bg-black/20 p-5"
+                className="enterprise-row border-r border-[var(--fin-line)] p-5 md:last:border-r-0"
               >
-                <p className="text-sm font-black text-[var(--fin-accent)]">
+                <p className="text-sm font-black text-[var(--fin-primary)]">
                   0{index + 1}
                 </p>
-                <h3 className="mt-1 text-xl font-bold text-white">
+                <h3 className="mt-1 text-xl font-bold text-[var(--fin-ink)]">
                   {step.title}
                 </h3>
                 <p className="mt-2 text-sm text-[var(--fin-muted)]">
@@ -352,37 +357,51 @@ export default function Home() {
         </div>
       </section>
 
-      <HeroSection />
-      <Solutions />
+      <section id="hero-extra" className="scroll-mt-28">
+        <HeroSection />
+      </section>
+      <section id="soluciones" className="scroll-mt-28">
+        <Solutions />
+      </section>
       <BenefitsSection />
-      <PaymentMethods />
-      <EnterpriseSolutionsSection />
-      <FeaturesSection />
-      <ProductsComparison />
-      <TestimonialsCarousel />
+      <section id="pagos" className="scroll-mt-28">
+        <PaymentMethods />
+      </section>
+      <section id="empresas" className="scroll-mt-28">
+        <EnterpriseSolutionsSection />
+      </section>
+      <section id="capacidades" className="scroll-mt-28">
+        <FeaturesSection />
+      </section>
+      <section id="terminales" className="scroll-mt-28">
+        <ProductsComparison />
+      </section>
+      <section id="testimonials" className="scroll-mt-28">
+        <TestimonialsCarousel />
+      </section>
 
       <section
         id="contacto"
-        className="mx-auto w-full max-w-7xl px-5 pb-24 md:px-8"
+        className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-24 md:px-8"
       >
-        <div className="rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(140deg,#132f57,#0f5d61)] p-8 md:p-12">
-          <h2 className="text-3xl font-black text-white md:text-5xl">
+        <div className="enterprise-section p-8 md:p-12">
+          <h2 className="enterprise-title text-3xl font-black md:text-5xl">
             {t.finalCtaTitle}
           </h2>
-          <p className="mt-4 max-w-2xl text-[var(--fin-muted-strong)]">
+          <p className="enterprise-subtitle mt-4 max-w-2xl">
             {t.finalCtaDescription}
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
+              className="corp-btn-primary inline-flex items-center gap-2 px-6 py-3 text-sm font-black transition hover:brightness-110"
             >
               {t.talkToSpecialist}
               <FaArrowRight />
             </Link>
             <Link
               href="mailto:customer@pagapay.mx"
-              className="inline-flex rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:border-white"
+              className="corp-btn-secondary inline-flex px-6 py-3 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
             >
               customer@pagapay.mx
             </Link>
@@ -392,8 +411,62 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 py-8 text-center text-sm text-[var(--fin-muted)]">
-        {t.footerText}
+      <footer className="border-t border-[var(--fin-line)] bg-white">
+        <div className="mx-auto grid w-full max-w-7xl gap-8 px-5 py-10 md:grid-cols-3 md:px-8">
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+              Pagapay
+            </p>
+            <p className="mt-3 max-w-sm text-sm text-[var(--fin-muted-strong)]">
+              {t.footerText}
+            </p>
+          </div>
+
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+              {t.footerSectionsTitle}
+            </p>
+            <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+              {sectionLinks.map((item) => (
+                <Link
+                  key={`footer-${item.href}`}
+                  href={item.href}
+                  className="text-[var(--fin-muted-strong)] transition hover:text-[var(--fin-ink)]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+              {t.footerLegalTitle}
+            </p>
+            <div className="mt-4 grid gap-3 text-sm">
+              <Link
+                href="/pdf/AP.pdf"
+                target="_blank"
+                className="text-[var(--fin-muted-strong)] transition hover:text-[var(--fin-ink)]"
+              >
+                {t.privacyNotice}
+              </Link>
+              <Link
+                href="/pdf/TYC.pdf"
+                target="_blank"
+                className="text-[var(--fin-muted-strong)] transition hover:text-[var(--fin-ink)]"
+              >
+                {t.termsAndConditions}
+              </Link>
+              <Link
+                href="mailto:customer@pagapay.mx"
+                className="text-[var(--fin-muted-strong)] transition hover:text-[var(--fin-ink)]"
+              >
+                customer@pagapay.mx
+              </Link>
+            </div>
+          </div>
+        </div>
       </footer>
     </main>
   );
@@ -411,7 +484,7 @@ const homeContent = {
     requestDemo: "Request a demo",
     viewSolutions: "View solutions",
     dashboardLabel: "Real-time dashboard",
-    dashboardTitle: "Today\'s processed volume",
+    dashboardTitle: "Today's processed volume",
     transparentFees: "Transparent fees",
     feesValue: "From 2.9% + VAT",
     viewPricing: "View plans and pricing",
@@ -426,6 +499,10 @@ const homeContent = {
       "We migrate your operation without slowing sales. A specialist supports your onboarding, setup, and first transactions.",
     talkToSpecialist: "Talk to a specialist",
     footerText: "Pagapay · Digital payments for modern commerce",
+    footerSectionsTitle: "Sections",
+    footerLegalTitle: "Legal",
+    privacyNotice: "Privacy Notice",
+    termsAndConditions: "Terms and Conditions",
   },
   es: {
     paymentEcosystem: "Ecosistema de pagos",
@@ -453,7 +530,34 @@ const homeContent = {
       "Migramos tu operación sin frenar ventas. Un asesor te acompaña en onboarding, configuración y primeros cobros.",
     talkToSpecialist: "Quiero hablar con un especialista",
     footerText: "Pagapay · Pagos digitales para comercio moderno",
+    footerSectionsTitle: "Secciones",
+    footerLegalTitle: "Legal",
+    privacyNotice: "Aviso de privacidad",
+    termsAndConditions: "Términos y condiciones",
   },
+};
+
+const sectionLinksByLanguage = {
+  en: [
+    { href: "#inicio", label: "Home" },
+    { href: "#products", label: "Solutions" },
+    { href: "#hoteleria", label: "Hospitality" },
+    { href: "#implementacion", label: "Implementation" },
+    { href: "#empresas", label: "Enterprise" },
+    { href: "#terminales", label: "Terminals" },
+    { href: "#testimonials", label: "Testimonials" },
+    { href: "#contacto", label: "Contact" },
+  ],
+  es: [
+    { href: "#inicio", label: "Inicio" },
+    { href: "#products", label: "Soluciones" },
+    { href: "#hoteleria", label: "Hotelería" },
+    { href: "#implementacion", label: "Implementación" },
+    { href: "#empresas", label: "Empresas" },
+    { href: "#terminales", label: "Terminales" },
+    { href: "#testimonials", label: "Testimonios" },
+    { href: "#contacto", label: "Contacto" },
+  ],
 };
 
 const statsByLanguage = {

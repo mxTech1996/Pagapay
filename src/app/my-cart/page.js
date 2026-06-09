@@ -4,9 +4,11 @@ import Navbar from "@/components/organisms/Navbar";
 
 export default function MyCart() {
   return (
-    <main>
+    <main className="min-h-screen bg-[var(--fin-bg)] text-[var(--fin-ink)]">
       <Navbar />
-      <CartSectionComponent />
+      <div className="pt-24">
+        <CartSectionComponent />
+      </div>
       <Footer />
     </main>
   );

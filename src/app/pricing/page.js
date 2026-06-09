@@ -36,16 +36,13 @@ export default function PricingPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[var(--fin-bg)] text-[var(--fin-ink)]">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="hero-orb hero-orb--one" />
-        <div className="hero-orb hero-orb--two" />
-      </div>
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0))]" />
 
       <section className="relative mx-auto w-full max-w-6xl px-5 py-12 md:px-8 md:py-16">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white/90 transition hover:border-white hover:text-white"
+            className="corp-btn-secondary inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
           >
             <FaArrowLeft />
             {t.backHome}
@@ -54,7 +51,7 @@ export default function PricingPage() {
             <LanguageSwitcher />
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--fin-accent)] px-5 py-2.5 text-sm font-bold text-[#02222a] transition hover:brightness-110"
+              className="corp-btn-accent inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition hover:brightness-110"
             >
               {t.talkToSales}
               <FaArrowRight />
@@ -62,11 +59,11 @@ export default function PricingPage() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-3xl border border-[var(--fin-line)] bg-[linear-gradient(150deg,#0b1f3a,#0f3658)] p-7 md:p-10">
+        <div className="corp-surface mt-8 p-7 md:p-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
             {t.label}
           </p>
-          <h1 className="mt-2 text-3xl font-black text-white md:text-5xl">
+          <h1 className="mt-2 text-3xl font-black text-[var(--fin-ink)] md:text-5xl">
             {t.title}
           </h1>
           <p className="mt-4 max-w-3xl text-[var(--fin-muted)] md:text-lg">
@@ -75,14 +72,11 @@ export default function PricingPage() {
 
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {plansByLanguage[language].map((plan) => (
-              <article
-                key={plan.title}
-                className="rounded-2xl border border-white/15 bg-black/20 p-5"
-              >
+              <article key={plan.title} className="corp-card p-5">
                 <p className="text-sm uppercase tracking-[0.14em] text-[var(--fin-muted)]">
                   {plan.title}
                 </p>
-                <p className="mt-2 text-2xl font-black text-white">
+                <p className="mt-2 text-2xl font-black text-[var(--fin-ink)]">
                   {plan.fee}
                 </p>
                 <p className="mt-2 text-sm text-[var(--fin-muted)]">
@@ -100,14 +94,14 @@ export default function PricingPage() {
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
               href="/more-information"
-              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-black text-[#0a2d4e] transition hover:bg-[#e9f8fa]"
+              className="corp-btn-accent inline-flex items-center gap-2 px-6 py-3 text-sm font-black transition hover:brightness-110"
             >
               {t.requestProposal}
               <FaArrowRight />
             </Link>
             <Link
               href="mailto:customer@pagapay.mx"
-              className="inline-flex rounded-full border border-white/35 px-6 py-3 text-sm font-semibold text-white transition hover:border-white"
+              className="corp-btn-secondary inline-flex px-6 py-3 text-sm font-semibold transition hover:border-[var(--fin-primary)]"
             >
               customer@pagapay.mx
             </Link>
