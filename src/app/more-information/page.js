@@ -56,7 +56,7 @@ export default function MoreInformation() {
             {t.description}
           </p>
 
-          <div className="corp-card mt-6 p-5 text-sm text-[var(--fin-muted-strong)]">
+          <div className="mt-6 border-l-2 border-[var(--fin-primary)] bg-[var(--corp-surface-2)] p-5 text-sm text-[var(--fin-muted-strong)]">
             <p>{t.contactEmail}: customer@pagapay.mx</p>
             <p className="mt-2">{t.responseTime}</p>
           </div>

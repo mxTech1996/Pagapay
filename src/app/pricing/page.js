@@ -59,7 +59,7 @@ export default function PricingPage() {
           </div>
         </div>
 
-        <div className="corp-surface mt-8 p-7 md:p-10">
+        <div className="mt-8 border-y border-[var(--fin-line)] py-7 md:py-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
             {t.label}
           </p>
@@ -70,23 +70,28 @@ export default function PricingPage() {
             {t.description}
           </p>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)]">
             {plansByLanguage[language].map((plan) => (
-              <article key={plan.title} className="corp-card p-5">
-                <p className="text-sm uppercase tracking-[0.14em] text-[var(--fin-muted)]">
+              <article
+                key={plan.title}
+                className="grid gap-4 p-5 md:grid-cols-[160px_180px_1fr] md:items-start"
+              >
+                <p className="text-sm uppercase tracking-[0.14em] text-[var(--fin-muted)] md:pt-1">
                   {plan.title}
                 </p>
-                <p className="mt-2 text-2xl font-black text-[var(--fin-ink)]">
+                <p className="text-2xl font-black text-[var(--fin-ink)]">
                   {plan.fee}
                 </p>
-                <p className="mt-2 text-sm text-[var(--fin-muted)]">
-                  {plan.description}
-                </p>
-                <ul className="mt-4 space-y-2 text-sm text-[var(--fin-muted-strong)]">
-                  {plan.features.map((feature) => (
-                    <li key={feature}>• {feature}</li>
-                  ))}
-                </ul>
+                <div>
+                  <p className="text-sm text-[var(--fin-muted)]">
+                    {plan.description}
+                  </p>
+                  <ul className="mt-3 space-y-2 text-sm text-[var(--fin-muted-strong)]">
+                    {plan.features.map((feature) => (
+                      <li key={feature}>• {feature}</li>
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>

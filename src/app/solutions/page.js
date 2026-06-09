@@ -105,7 +105,7 @@ export default function SolutionsPage() {
           </div>
         </div>
 
-        <div className="corp-surface mt-8 p-7 md:p-10">
+        <div className="mt-8 border-y border-[var(--fin-line)] py-7 md:py-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-accent)]">
             {t.sectionLabel}
           </p>
@@ -116,32 +116,34 @@ export default function SolutionsPage() {
             {t.description}
           </p>
 
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)]">
             {localizedPillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
                 <article
                   id={pillar.id}
                   key={pillar.id}
-                  className="corp-card p-5"
+                  className="grid gap-4 p-5 md:grid-cols-[88px_1fr] md:items-center"
                 >
-                  <div className="inline-flex border border-[var(--fin-line)] bg-[var(--corp-surface-2)] p-2 text-[var(--fin-accent)]">
-                    <Icon />
+                  <div className="inline-flex h-12 w-12 items-center justify-center text-[var(--fin-accent)]">
+                    <Icon className="text-lg" />
                   </div>
-                  <p className="mt-3 text-xs uppercase tracking-[0.14em] text-[var(--fin-muted)]">
-                    {pillar.badge}
-                  </p>
-                  <h2 className="mt-2 text-2xl font-black text-[var(--fin-ink)]">
-                    {pillar.title}
-                  </h2>
-                  <p className="mt-3 text-sm text-[var(--fin-muted)]">
-                    {pillar.description}
-                  </p>
-                  <ul className="mt-4 space-y-2 text-sm text-[var(--fin-muted-strong)]">
-                    {pillar.highlights.map((item) => (
-                      <li key={item}>- {item}</li>
-                    ))}
-                  </ul>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.14em] text-[var(--fin-muted)]">
+                      {pillar.badge}
+                    </p>
+                    <h2 className="mt-2 text-2xl font-black text-[var(--fin-ink)]">
+                      {pillar.title}
+                    </h2>
+                    <p className="mt-3 text-sm text-[var(--fin-muted)]">
+                      {pillar.description}
+                    </p>
+                    <ul className="mt-4 space-y-2 text-sm text-[var(--fin-muted-strong)]">
+                      {pillar.highlights.map((item) => (
+                        <li key={item}>- {item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </article>
               );
             })}
@@ -150,25 +152,30 @@ export default function SolutionsPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-5 pb-20 md:px-8">
-        <div className="corp-surface p-7 md:p-10">
+        <div className="border-y border-[var(--fin-line)] py-7 md:py-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
             {t.howWeWork}
           </p>
           <h2 className="mt-2 text-3xl font-black text-[var(--fin-ink)] md:text-4xl">
             {t.implementationTitle}
           </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)]">
             {localizedJourney.map((step, index) => (
-              <article key={step.title} className="corp-card p-5">
-                <p className="text-sm font-black text-[var(--fin-accent)]">
+              <article
+                key={step.title}
+                className="grid gap-3 p-5 md:grid-cols-[80px_1fr] md:items-start"
+              >
+                <p className="text-sm font-black text-[var(--fin-accent)] md:pt-1">
                   0{index + 1}
                 </p>
-                <h3 className="mt-1 text-xl font-bold text-[var(--fin-ink)]">
-                  {step.title}
-                </h3>
-                <p className="mt-2 text-sm text-[var(--fin-muted)]">
-                  {step.text}
-                </p>
+                <div>
+                  <h3 className="text-xl font-bold text-[var(--fin-ink)]">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-[var(--fin-muted)]">
+                    {step.text}
+                  </p>
+                </div>
               </article>
             ))}
           </div>
@@ -176,7 +183,7 @@ export default function SolutionsPage() {
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-5 pb-24 md:px-8">
-        <div className="corp-surface p-8 md:p-12">
+        <div className="border-y border-[var(--fin-line)] py-8 md:py-12">
           <h2 className="text-3xl font-black text-[var(--fin-ink)] md:text-5xl">
             {t.finalTitle}
           </h2>

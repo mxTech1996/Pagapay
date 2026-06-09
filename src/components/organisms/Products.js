@@ -73,25 +73,25 @@ export default function ProductsComparison() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="corp-surface p-7 md:p-10">
+      <div className="border-y border-[var(--fin-line)] py-7 md:py-10">
         <h2 className="mb-8 text-center text-2xl font-black text-[var(--fin-ink)]">
           {t.title}
         </h2>
-        <div className="grid md:grid-cols-2 gap-6  ">
+        <div className="divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)]">
           {terminalOptions.map((terminal, index) => (
-            <div
+            <article
               key={index}
-              className="corp-card flex flex-col items-center p-6 text-center"
+              className="grid items-center gap-5 p-6 md:grid-cols-[150px_180px_1fr_auto]"
             >
               <img
                 src={terminal.image}
                 alt={terminal.name}
-                className="h-24 mb-4"
+                className="mx-auto h-20 md:h-24"
               />
-              <h3 className="mb-4 text-xl font-semibold text-[var(--fin-ink)]">
+              <h3 className="text-center text-xl font-semibold text-[var(--fin-ink)] md:text-left">
                 {terminal.name}
               </h3>
-              <ul className="mb-6 space-y-2 text-sm text-[var(--fin-muted)]">
+              <ul className="space-y-1 text-sm text-[var(--fin-muted)]">
                 <li>
                   {t.magneticStripe}:{" "}
                   {terminal.features.MagneticStripe ? t.yes : t.no}
@@ -103,23 +103,21 @@ export default function ProductsComparison() {
                   {t.contactlessNfc}:{" "}
                   {terminal.features.Contactless ? t.yes : t.no}
                 </li>
-
                 <li>
                   {t.networks}: {terminal.features.MobileNetworks}
                 </li>
-
                 <li>
                   {t.commission}: {terminal.features.Fee || t.custom}
                 </li>
               </ul>
               <button
                 onClick={() => (window.location.href = "/more-information")}
-                className="corp-btn-primary flex items-center gap-2 px-5 py-2.5 text-sm font-bold transition hover:brightness-110"
+                className="corp-btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-bold transition hover:brightness-110"
               >
                 {t.moreInfo}
                 <FaShoppingCart />
               </button>
-            </div>
+            </article>
           ))}
         </div>
       </div>

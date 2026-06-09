@@ -45,15 +45,8 @@ section[id] {
 }
 
 .corp-surface {
-  background: linear-gradient(180deg, var(--corp-surface-2), var(--corp-surface));
-  border: 1px solid var(--fin-line);
-  border-radius: 0;
-}
-
-.corp-card {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--fin-line);
   border-radius: 0;
 }
 
@@ -83,8 +76,9 @@ section[id] {
 }
 
 .enterprise-section {
-  background: #fff;
-  border: 1px solid var(--fin-line);
+  background: transparent;
+  border-top: 1px solid var(--fin-line);
+  border-bottom: 1px solid var(--fin-line);
   border-radius: 0;
 }
 

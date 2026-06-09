@@ -15,29 +15,29 @@ export default function FeaturesSection() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="corp-surface p-7 text-center md:p-10">
+      <div className="border-y border-[var(--fin-line)] py-7 text-center md:py-10">
         <h2 className="mb-4 text-3xl font-black text-[var(--fin-ink)]">
           {t.title}
         </h2>
         <p className="mb-12 text-[var(--fin-muted)]">{t.description}</p>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)] text-left">
           {t.features.map((feature, index) => (
-            <motion.div
+            <motion.article
               key={index}
-              whileHover={{ scale: 1.01 }}
-              className="corp-card flex flex-col items-center p-6"
+              whileHover={{ backgroundColor: "rgba(249,251,255,1)" }}
+              className="grid items-center gap-4 p-6 md:grid-cols-[84px_1fr]"
             >
-              <div className="mb-4 text-[var(--fin-accent)]">
-                {feature.icon}
+              <div className="text-[var(--fin-accent)]">{feature.icon}</div>
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-[var(--fin-ink)]">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-[var(--fin-muted)]">
+                  {feature.description}
+                </p>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-[var(--fin-ink)]">
-                {feature.title}
-              </h3>
-              <p className="text-sm text-[var(--fin-muted)]">
-                {feature.description}
-              </p>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

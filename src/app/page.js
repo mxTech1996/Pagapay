@@ -65,7 +65,7 @@ export default function Home() {
         className="scroll-mt-28 mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 pt-14 md:grid-cols-2 md:px-8 md:pt-20"
       >
         <div className="flex flex-col justify-center">
-          <p className="mb-4 w-max border border-[var(--fin-line)] bg-white px-4 py-1.5 text-sm text-[var(--fin-muted)]">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--fin-muted)]">
             {t.heroBadge}
           </p>
           <h1 className="enterprise-title text-4xl font-black leading-tight md:text-6xl">
@@ -94,7 +94,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-10 border border-[var(--fin-line)] bg-white">
+          <div className="mt-10 border-y border-[var(--fin-line)]">
             {statsByLanguage[language].map((item) => (
               <article
                 key={item.label}
@@ -112,7 +112,7 @@ export default function Home() {
         </div>
 
         <div>
-          <div className="enterprise-section p-6">
+          <div className="md:border-l md:border-[var(--fin-line)] md:pl-8">
             <p className="text-sm text-[var(--fin-muted)]">
               {t.dashboardLabel}
             </p>
@@ -123,7 +123,7 @@ export default function Home() {
               $148,320
             </p>
 
-            <div className="mt-6 border border-[var(--fin-line)]">
+            <div className="mt-6 border-y border-[var(--fin-line)]">
               {kpisByLanguage[language].map((kpi) => (
                 <div
                   key={kpi.title}
@@ -162,22 +162,22 @@ export default function Home() {
         id="aceptamos"
         className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
       >
-        <div className="enterprise-section p-6 md:p-10">
+        <div className="border-y border-[var(--fin-line)] py-8 md:py-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
             {t.weAccept}
           </p>
-          <div className="mt-5 grid grid-cols-3 gap-4 sm:grid-cols-6">
+          <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-6">
             {brands.map((brand) => (
               <div
                 key={brand.alt}
-                className="flex h-20 items-center justify-center border border-[var(--fin-line)] bg-white p-4"
+                className="flex h-12 items-center justify-center"
               >
                 <Image
                   src={brand.src}
                   alt={brand.alt}
                   width={84}
                   height={34}
-                  className="h-auto w-auto opacity-90"
+                  className="h-auto w-auto opacity-80"
                 />
               </div>
             ))}
@@ -198,7 +198,7 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="enterprise-section divide-y divide-[var(--fin-line)]">
+        <div className="divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)]">
           {solutionsByLanguage[language].map((solution) => (
             <article
               key={solution.title}
@@ -231,7 +231,7 @@ export default function Home() {
         id="hoteleria"
         className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
       >
-        <div className="enterprise-section p-7 md:p-10">
+        <div className="border-y border-[var(--fin-line)] py-7 md:py-10">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div className="max-w-3xl">
               <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-primary)]">
@@ -253,20 +253,20 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="mt-8 divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)]">
             {hotelGalleryByLanguage[language].map((item) => (
               <article
                 key={item.title}
-                className="border border-[var(--fin-line)] bg-white"
+                className="grid md:grid-cols-[320px_1fr]"
               >
-                <div className="relative h-52 w-full">
+                <div className="relative h-52 w-full md:h-full">
                   <img
                     src={item.src}
                     alt={item.title}
                     className="h-full w-full object-cover"
                   />
                 </div>
-                <div className="p-5">
+                <div className="p-5 md:p-6">
                   <h3 className="text-xl font-black text-[var(--fin-ink)]">
                     {item.title}
                   </h3>
@@ -278,11 +278,11 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 grid border border-[var(--fin-line)] md:grid-cols-4">
+          <div className="mt-8 grid border-y border-[var(--fin-line)] md:grid-cols-4 md:divide-x md:divide-[var(--fin-line)]">
             {hotelMetricsByLanguage[language].map((metric) => (
               <article
                 key={metric.label}
-                className="enterprise-row border-r border-[var(--fin-line)] px-5 py-4 md:last:border-r-0"
+                className="enterprise-row px-5 py-4 md:border-b-0"
               >
                 <p className="text-3xl font-black text-[var(--fin-primary)]">
                   {metric.value}
@@ -294,12 +294,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)]">
             {hotelOperationsByLanguage[language].map((item) => (
-              <article
-                key={item.title}
-                className="border border-[var(--fin-line)] bg-white p-6"
-              >
+              <article key={item.title} className="p-6 md:p-7">
                 <p className="text-xs uppercase tracking-[0.16em] text-[var(--fin-primary)]">
                   {item.area}
                 </p>
@@ -313,7 +310,7 @@ export default function Home() {
                   {item.points.map((point) => (
                     <li
                       key={point}
-                      className="border-l-2 border-[var(--fin-primary)] bg-[var(--corp-surface-2)] px-3 py-2"
+                      className="border-l-2 border-[var(--fin-primary)] px-3 py-2"
                     >
                       {point}
                     </li>
@@ -329,18 +326,18 @@ export default function Home() {
         id="implementacion"
         className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-20 md:px-8"
       >
-        <div className="enterprise-section p-7 md:p-10">
+        <div className="border-y border-[var(--fin-line)] py-7 md:py-10">
           <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
             {t.implementationLabel}
           </p>
           <h2 className="enterprise-title mt-2 text-3xl font-black md:text-4xl">
             {t.implementationTitle}
           </h2>
-          <div className="mt-8 grid border border-[var(--fin-line)] md:grid-cols-3">
+          <div className="mt-8 grid border-y border-[var(--fin-line)] md:grid-cols-3 md:divide-x md:divide-[var(--fin-line)]">
             {stepsByLanguage[language].map((step, index) => (
               <article
                 key={step.title}
-                className="enterprise-row border-r border-[var(--fin-line)] p-5 md:last:border-r-0"
+                className="enterprise-row p-5 md:border-b-0"
               >
                 <p className="text-sm font-black text-[var(--fin-primary)]">
                   0{index + 1}
@@ -384,7 +381,7 @@ export default function Home() {
         id="contacto"
         className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-24 md:px-8"
       >
-        <div className="enterprise-section p-8 md:p-12">
+        <div className="border-y border-[var(--fin-line)] py-8 md:py-12">
           <h2 className="enterprise-title text-3xl font-black md:text-5xl">
             {t.finalCtaTitle}
           </h2>

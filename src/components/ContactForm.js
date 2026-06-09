@@ -123,7 +123,7 @@ export default function ContactForm() {
 
       {showSuccessDialog ? (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-white/70 px-5 backdrop-blur-sm">
-          <div className="corp-surface w-full max-w-md p-6 text-center shadow-[0_20px_60px_rgba(15,31,57,0.18)]">
+          <div className="w-full max-w-md border-y border-[var(--fin-line)] bg-white py-6 text-center">
             <h3 className="text-2xl font-black text-[var(--fin-ink)]">
               {t.modalTitle}
             </h3>

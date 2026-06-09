@@ -10,27 +10,23 @@ export default function HeroSection() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="corp-surface grid gap-10 p-7 md:grid-cols-2 md:p-10">
+      <div className="grid gap-10 border-y border-[var(--fin-line)] py-7 md:grid-cols-2 md:py-10">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
-          className="relative"
+          className="relative border-b border-[var(--fin-line)] pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-8"
         >
-          <div className="corp-card p-8 md:p-10">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--fin-accent)]">
-              {t.weAre}
-            </p>
-            <h1 className="mb-4 text-3xl font-black leading-tight text-[var(--fin-ink)] md:text-5xl">
-              {t.subtitle}
-            </h1>
-            <p className="text-lg text-[var(--fin-muted)]">
-              <span className="font-bold text-[var(--fin-primary)]">
-                Pagapay
-              </span>
-            </p>
-          </div>
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--fin-accent)]">
+            {t.weAre}
+          </p>
+          <h1 className="mb-4 text-3xl font-black leading-tight text-[var(--fin-ink)] md:text-5xl">
+            {t.subtitle}
+          </h1>
+          <p className="text-lg text-[var(--fin-muted)]">
+            <span className="font-bold text-[var(--fin-primary)]">Pagapay</span>
+          </p>
         </motion.div>
 
         {/* Right Content */}
@@ -44,7 +40,7 @@ export default function HeroSection() {
           <img
             src={dataSite.image_hero}
             alt="Hero Image"
-            className="mt-4 h-[300px] w-full max-w-[420px] border border-[var(--fin-line)] object-cover"
+            className="mt-4 h-[300px] w-full max-w-[420px] object-cover"
           />
 
           <p className="mb-4 mt-6 max-w-md text-sm text-[var(--fin-muted)]">

@@ -19,11 +19,11 @@ export default function TestimonialsCarousel() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="corp-surface mx-auto max-w-3xl p-7 text-center md:p-10">
+      <div className="mx-auto max-w-3xl border-y border-[var(--fin-line)] py-7 text-center md:py-10">
         <h2 className="mb-6 text-3xl font-black text-[var(--fin-ink)]">
           {t.title}
         </h2>
-        <div className="corp-card relative p-6">
+        <div className="relative border-y border-[var(--fin-line)] px-6 py-8">
           <button
             onClick={handlePrev}
             className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--fin-muted-strong)] hover:text-[var(--fin-ink)]"

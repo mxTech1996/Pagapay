@@ -9,31 +9,33 @@ export default function Solutions() {
 
   return (
     <section className="mx-auto w-full max-w-7xl px-5 pb-16 md:px-8">
-      <div className="corp-surface p-7 text-center md:p-10">
+      <div className="border-y border-[var(--fin-line)] py-7 text-center md:py-10">
         <h2 className="mb-2 text-3xl font-black text-[var(--fin-ink)]">
           {t.title}
         </h2>
         <p className="mb-12 text-[var(--fin-muted)]">{t.description}</p>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="mt-8 divide-y divide-[var(--fin-line)] border-y border-[var(--fin-line)] text-left">
           {t.services.map((service, index) => (
-            <motion.div
+            <motion.article
               key={index}
-              whileHover={{ scale: 1.01 }}
-              className="corp-card p-5"
+              whileHover={{ backgroundColor: "rgba(249,251,255,1)" }}
+              className="grid items-center gap-5 p-5 md:grid-cols-[220px_1fr]"
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="mx-auto mb-4 h-48 object-contain"
+                className="mx-auto h-28 object-contain md:h-32"
               />
-              <h3 className="mb-2 text-lg font-semibold text-[var(--fin-ink)]">
-                {service.title}
-              </h3>
-              <p className="text-sm text-[var(--fin-muted)]">
-                {service.description}
-              </p>
-            </motion.div>
+              <div>
+                <h3 className="mb-2 text-lg font-semibold text-[var(--fin-ink)]">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-[var(--fin-muted)]">
+                  {service.description}
+                </p>
+              </div>
+            </motion.article>
           ))}
         </div>
       </div>
