@@ -30,10 +30,15 @@ export default function HeroSection() {
             {t.description}
           </p>
           <button
-            onClick={() => (window.location.href = "/more-information")}
+            onClick={() =>
+              document.getElementById("inicio")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              })
+            }
             className="corp-btn-primary mt-7 w-fit px-6 py-3 text-sm font-bold transition hover:brightness-110"
           >
-            {t.contactSales}
+            {t.explore}
           </button>
         </motion.div>
 
@@ -64,7 +69,7 @@ const heroContent = {
     weAre: "We are",
     subtitle: dataSite.subtitle,
     description: dataSite.description,
-    contactSales: "Contact Sales",
+    explore: "Explore",
   },
   es: {
     weAre: "Somos",
@@ -72,6 +77,6 @@ const heroContent = {
       "Somos una empresa que ofrece soluciones de pago, tanto de ecommerce como de tarjeta presente.",
     description:
       "Nuestro equipo ofrece procesamiento de pagos rápido, seguro y sin fricción para negocios de todos los tamaños. Desde flujos de pago en línea hasta transacciones en punto de venta.",
-    contactSales: "Contactar ventas",
+    explore: "Explorar",
   },
 };
