@@ -48,9 +48,9 @@ export const dataSite = {
   email: "customer@pagapay.mx",
   address: "",
   description:
-    "Our  provides fast, secure, and seamless payment processing solutions for businesses of all sizes. From online checkouts to in-store transactions, we enable  to accept payments via credit cards, digital wallets, and bank transfers with ease.",
+    "Our platform provides fast, secure, and seamless payment processing solutions for businesses of all sizes. From online payment flows to in-store transactions, we enable businesses to accept payments via credit cards, digital wallets, and bank transfers with ease.",
   subtitle:
-    "Secure, Scalable Payment Solutions for a Seamless Checkout Experience",
+    "Secure, Scalable Payment Solutions for a Seamless Payment Experience",
   image_hero:
     "https://cms-webserver-statics.s3.amazonaws.com/media/websites/paga_1.jpg",
   image_hero2:
@@ -143,7 +143,7 @@ export const dataSite = {
     {
       name: "James Lemnes, Digital Services Provide",
       description:
-        "The analytics dashboard has helped us better understand our customers' behavior and optimize our checkout process",
+        "The analytics dashboard has helped us better understand our customers' behavior and optimize our payment process",
       rating: 5,
       image: null,
     },
@@ -202,7 +202,7 @@ export const dataSite = {
       price: "799.99",
       stock: 100,
       content:
-        "NFC , Technology,Faster Checkout Process,EMV and Magnetic Stripe Support,Secure Transactions,Mobile Wallet Compatibility,Compact and Wireless Design,Multi Device Pairing",
+        "NFC , Technology,Faster Payment Process,EMV and Magnetic Stripe Support,Secure Transactions,Mobile Wallet Compatibility,Compact and Wireless Design,Multi Device Pairing",
       product_type: "NORMAL",
       image:
         "https://cms-webserver-statics.s3.amazonaws.com/media/products/pay_10_U7hRshB.jpg",
@@ -245,11 +245,11 @@ export const dataSite = {
       name: "QR Code Payment",
       category: null,
       description:
-        "Our QR Code Payment solution offers a fast, secure, and contactless way for customers to make payments by simply scanning a QR code with their smartphone. Ideal for physical stores, delivery services, and remote sales, this solution reduces friction at checkout and enhances customer convenience no terminal or card swipe required.",
+        "Our QR Code Payment solution offers a fast, secure, and contactless way for customers to make payments by simply scanning a QR code with their smartphone. Ideal for physical stores, delivery services, and remote sales, this solution reduces friction during payment and enhances customer convenience, with no terminal or card swipe required.",
       price: "799.99",
       stock: 100,
       content:
-        "Instant QR Code Generation,Generate dynamic or static QR codes instantly for any transaction, invoice, or product,Customer Friendly Checkout,Customers scan the code using their preferred banking app or digital wallet,no need for physical cards or hardware.",
+        "Instant QR Code Generation,Generate dynamic or static QR codes instantly for any transaction, invoice, or product,Customer-Friendly Payment Experience,Customers scan the code using their preferred banking app or digital wallet,no need for physical cards or hardware.",
       product_type: "NORMAL",
       image:
         "https://cms-webserver-statics.s3.amazonaws.com/media/products/pay._15.jpg",

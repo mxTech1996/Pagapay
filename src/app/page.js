@@ -59,7 +59,9 @@ export default function Home() {
           </div>
         </div>
       </header>
-
+      <section id="hero-extra" className="scroll-mt-28">
+        <HeroSection />
+      </section>
       <section
         id="inicio"
         className="scroll-mt-28 mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 pt-14 md:grid-cols-2 md:px-8 md:pt-20"
@@ -163,10 +165,10 @@ export default function Home() {
         className="scroll-mt-28 mx-auto w-full max-w-7xl px-5 pb-16 md:px-8"
       >
         <div className="border-y border-[var(--fin-line)] py-8 md:py-10">
-          <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)]">
+          <p className="text-xs uppercase tracking-[0.18em] text-[var(--fin-muted)] justify-center flex">
             {t.weAccept}
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-x-10 gap-y-6">
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-x-10 gap-y-6">
             {brands.map((brand) => (
               <div
                 key={brand.alt}
@@ -354,9 +356,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="hero-extra" className="scroll-mt-28">
-        <HeroSection />
-      </section>
       <section id="soluciones" className="scroll-mt-28">
         <Solutions />
       </section>
@@ -597,9 +596,9 @@ const brands = [
 const solutionsByLanguage = {
   en: [
     {
-      tag: "Omnichannel checkout",
+      tag: "Omnichannel payments",
       title: "Payment links, QR, and terminals",
-      href: "/solutions#checkout",
+      href: "/solutions#payment-flow",
       description:
         "Create payment links in seconds, process dynamic QR payments, and connect in-store terminals without changing providers.",
     },
@@ -620,9 +619,9 @@ const solutionsByLanguage = {
   ],
   es: [
     {
-      tag: "Checkout omnicanal",
+      tag: "Pagos omnicanal",
       title: "Cobro por link, QR y terminal",
-      href: "/solutions#checkout",
+      href: "/solutions#payment-flow",
       description:
         "Crea enlaces de pago en segundos, procesa QR dinámicos y conecta terminales para tienda física sin cambiar de proveedor.",
     },
@@ -651,7 +650,7 @@ const stepsByLanguage = {
     },
     {
       title: "Guided integration",
-      text: "We configure your API or hosted checkout, activate fraud rules, and connect the most relevant payment methods.",
+      text: "We configure your API or hosted payment page, activate fraud rules, and connect the most relevant payment methods.",
     },
     {
       title: "Continuous scale",
@@ -665,7 +664,7 @@ const stepsByLanguage = {
     },
     {
       title: "Integración guiada",
-      text: "Configuramos API o checkout hosted, activamos reglas antifraude y conectamos métodos de pago relevantes.",
+      text: "Configuramos API o página de pago alojada, activamos reglas antifraude y conectamos métodos de pago relevantes.",
     },
     {
       title: "Escalamiento continuo",
@@ -679,14 +678,14 @@ const hotelContentByLanguage = {
     label: "Hospitality section",
     title: "Specialists in Hotel Operations and Management",
     description:
-      "From reservation to checkout, we centralize payments, reconciliation, and operational control for city hotels, resorts, and multi-property chains.",
+      "From reservation to final payment, we centralize payments, reconciliation, and operational control for city hotels, resorts, and multi-property chains.",
     cta: "Request a hospitality strategy",
   },
   es: {
     label: "Sección hotelera",
     title: "Especialistas en operación y gestión hotelera",
     description:
-      "Desde la reservación hasta el checkout, centralizamos pagos, conciliación y control operativo para hoteles urbanos, resorts y cadenas.",
+      "Desde la reservación hasta el pago final, centralizamos pagos, conciliación y control operativo para hoteles urbanos, resorts y cadenas.",
     cta: "Solicitar estrategia para hotelería",
   },
 };
@@ -751,7 +750,7 @@ const hotelOperationsByLanguage = {
       description:
         "Control lodging, events, and F&B charges in one view with reporting by area, shift, and responsible user.",
       points: [
-        "Express checkout with secure card tokenization",
+        "Express payments with secure card tokenization",
         "Alert panel for declines, chargebacks, and adjustments",
         "Dedicated flows for agencies, corporate accounts, and large groups",
       ],
@@ -775,7 +774,7 @@ const hotelOperationsByLanguage = {
       description:
         "Controla cargos de hospedaje, eventos y alimentos en una sola vista con reportes por área, turno y responsable.",
       points: [
-        "Checkout express con tokenización segura de tarjetas",
+        "Pagos exprés con tokenización segura de tarjetas",
         "Panel de alertas para rechazos, contracargos y ajustes",
         "Flujos para agencias, cuentas corporativas y grupos grandes",
       ],

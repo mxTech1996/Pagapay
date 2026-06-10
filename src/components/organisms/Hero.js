@@ -68,9 +68,9 @@ const heroContent = {
   es: {
     weAre: "Somos",
     subtitle:
-      "Soluciones de pago seguras y escalables para un checkout sin fricción",
+      "Soluciones de pago seguras y escalables para un flujo de pago sin fricción",
     description:
-      "Nuestro equipo ofrece procesamiento de pagos rápido, seguro y sin fricción para negocios de todos los tamaños. Desde checkouts en línea hasta transacciones en punto de venta.",
+      "Nuestro equipo ofrece procesamiento de pagos rápido, seguro y sin fricción para negocios de todos los tamaños. Desde flujos de pago en línea hasta transacciones en punto de venta.",
     contactSales: "Contactar ventas",
   },
 };

@@ -13,15 +13,15 @@ import { useLanguage } from "@/context/LanguageContext";
 
 const pillars = [
   {
-    id: "checkout",
+    id: "payment-flow",
     icon: FaStore,
-    badge: "Checkout",
+    badge: "Payment flow",
     title: "Collect payments wherever your business sells",
     description:
       "Activate payment links, QR collections, and in-person terminals from one control panel. Keep the same brand experience across web, stores, and chat sales.",
     highlights: [
       "Customizable payment links",
-      "Unified web, QR, and in-store checkout",
+      "Unified payments across web, QR, and in-store channels",
       "Terminals connected to real-time reports",
     ],
   },
@@ -60,7 +60,7 @@ const journey = [
   },
   {
     title: "Guided implementation",
-    text: "We configure checkout, risk rules, and integrations so you can start collecting quickly and securely.",
+    text: "We configure your payment flow, risk rules, and integrations so you can start collecting quickly and securely.",
   },
   {
     title: "Continuous optimization",
@@ -251,15 +251,15 @@ const pillarsByLanguage = {
   en: pillars,
   es: [
     {
-      id: "checkout",
+      id: "payment-flow",
       icon: FaStore,
-      badge: "Checkout omnicanal",
+      badge: "Flujo de pago omnicanal",
       title: "Cobra donde vende tu negocio",
       description:
         "Activa links de pago, cobro con QR y terminal física desde un solo panel. Mantienes la misma experiencia de marca en web, tienda y ventas por chat.",
       highlights: [
         "Links de pago personalizables",
-        "Checkout unificado para web, QR y tienda",
+        "Pagos unificados en web, QR y tienda",
         "Terminales conectadas a reportes en tiempo real",
       ],
     },
@@ -301,7 +301,7 @@ const journeyByLanguage = {
     },
     {
       title: "Implementación guiada",
-      text: "Configuramos checkout, reglas de riesgo e integraciones para que empieces a cobrar rápido y seguro.",
+      text: "Configuramos tu flujo de pago, reglas de riesgo e integraciones para que empieces a cobrar rápido y seguro.",
     },
     {
       title: "Optimización continua",
